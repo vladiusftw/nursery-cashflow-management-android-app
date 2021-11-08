@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/enrollment_fragment"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/top_enroll"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/tableList"
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:text="Table List"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:background="@drawable/round_corner"
+            android:backgroundTint="#87E0F6"
+            android:gravity="center"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/charge"
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:text="Charge"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:background="@drawable/round_corner"
+            android:gravity="center"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:id="@+id/top_enroll2"
+        android:layout_marginTop="5sp"
+        android:weightSum="2">
+
+        <TextView
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:text="Edit"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:background="@drawable/round_corner"
+            android:gravity="center"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_weight="1"/>
+
+        <TextView
+            android:id="@+id/enrollment"
+            android:layout_width="match_parent"
+            android:layout_height="20pt"
+            android:text="Enrollment"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:background="@drawable/round_corner"
+            android:gravity="center"
+            android:layout_marginLeft="2pt"
+            android:layout_marginRight="2pt"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+
+</LinearLayout>
