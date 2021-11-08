@@ -1,0 +1,9 @@
+- getStatementByMonth(int id, int month)
+- getStatementByYear(int id, int year)
+- getStatmentByCustom(int id, Date date) // format of date is "DD/MM/YYYY"
+- getStatementsByMonth(int month)
+- getStatementsByYear(int year)
+- getStatementsByCustom(Date date) // format of date is "DD/MM/YYYY"
+- getExpensesByMonth(int month)
+- getExpensesByYear(int year)
+- getExpensesByCustom(Date date) // format of date is "DD/MM/YYYY"
