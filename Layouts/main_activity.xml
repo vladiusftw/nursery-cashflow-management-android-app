@@ -11,22 +11,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADMIN"
+        android:textColor="@color/white"
         android:textSize="40sp"
+        app:layout_constraintBottom_toTopOf="@id/guideline6"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@id/guideline6"
-        android:textColor="@color/white"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <RelativeLayout
-        android:id="@+id/mid_fragment"
-        android:layout_width="match_parent"
+        android:id="@+id/main_mid_fragment"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toTopOf="@id/guideline8"
+        app:layout_constraintEnd_toEndOf="@id/mid_end"
+        app:layout_constraintStart_toStartOf="@id/mid_start"
         app:layout_constraintTop_toBottomOf="@id/guideline7"
-        app:layout_constraintVertical_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        app:layout_constraintVertical_bias="0.0" />
 
 
     <LinearLayout
@@ -40,36 +40,39 @@
         app:layout_constraintTop_toBottomOf="@id/guideline5">
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/kids_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:adjustViewBounds="true"
             android:src="@drawable/children"/>
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/file_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:adjustViewBounds="true"
-            android:src="@drawable/file" />
+            android:src="@drawable/file"/>
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/money_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:adjustViewBounds="true"
-            android:src="@drawable/money" />
+            android:src="@drawable/money"/>
 
         <ImageView
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
+            android:id="@+id/user_button"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_weight="0.25"
             android:adjustViewBounds="true"
-            android:src="@drawable/user" />
+            android:src="@drawable/user"/>
 
 
     </LinearLayout>
-
 
 
     <androidx.constraintlayout.widget.Guideline
@@ -78,7 +81,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.92"/>
+        app:layout_constraintGuide_percent="0.92" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline9"
@@ -102,7 +105,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.09"/>
+        app:layout_constraintGuide_percent="0.09" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline7"
@@ -111,6 +114,22 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
         app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mid_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/mid_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.95"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
