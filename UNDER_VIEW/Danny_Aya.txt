@@ -10,3 +10,5 @@
 - insertKid(Kid kid)
 - insertExpense(Expense expense)
 - insertStaff(Staff staff)
+- getKidsIdStartsWith(int id)
+- getStaffsIdStartsWith(int id)
