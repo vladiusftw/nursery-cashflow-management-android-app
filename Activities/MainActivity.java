@@ -1,4 +1,4 @@
-package com.example.project;
+package com.example.project.Activities;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,10 +7,9 @@ import android.app.Fragment;
 import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
-import android.widget.ListView;
 
-import java.util.ArrayList;
-import java.util.Arrays;
+import com.example.project.Fragments.EnrollFragment;
+import com.example.project.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
         ImageView user_button = findViewById(R.id.user_button);
 
         getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
-                new EnrollFragment(false),"enroll_fragment")
+                new EnrollFragment(true),"enroll_fragment")
                 .addToBackStack("enroll_fragment").commit();
         kids_button.setColorFilter(getResources().getColor(R.color.black));
 
@@ -34,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
             Fragment fragment = getFragmentManager().findFragmentByTag("enroll_fragment");
                 if(fragment == null || !fragment.isVisible()){
                     getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
-                            new EnrollFragment(false),"enroll_fragment")
+                            new EnrollFragment(true),"enroll_fragment")
                             .addToBackStack("enroll_fragment").commit();
                     kids_button.setColorFilter(getResources().getColor(R.color.black));
                 }
