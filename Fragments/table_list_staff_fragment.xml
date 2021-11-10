@@ -43,7 +43,7 @@
         android:backgroundTint="@color/button_color"
         android:gravity="center"
         android:text="Search"
-        android:textColor="@color/white"
+        android:textColor="@color/text"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
         app:layout_constraintTop_toBottomOf="@id/search_button_top"
