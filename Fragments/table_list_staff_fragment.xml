@@ -6,40 +6,49 @@
     android:layout_height="match_parent">
 
 
-    <ImageView
-        android:id="@+id/search_bar"
+    <View
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:src="@drawable/search_bar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_height="0dp"
+        android:background="@drawable/search_bar_color"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
         app:layout_constraintTop_toTopOf="parent"/>
 
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/search_icon_end"/>
+
     <EditText
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/table_list_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
         android:hint="Search"
-        app:layout_constraintBottom_toTopOf="@id/search_bottom"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@id/search_start"
-        app:layout_constraintTop_toBottomOf="@id/search_top"
-        app:layout_constraintHorizontal_bias="0.0"
-        android:background="@android:color/transparent"/>
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_icon"
+        app:layout_constraintEnd_toStartOf="@id/search_button"
+        android:singleLine="true"/>
 
     <TextView
         android:id="@+id/search_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/button_color"
         android:gravity="center"
         android:text="Search"
         android:textColor="@color/white"
         android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@id/button_bottom"
-        app:layout_constraintEnd_toEndOf="@id/button_end"
-        app:layout_constraintTop_toBottomOf="@id/button_top"
-        android:paddingHorizontal="5sp"/>
+        app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
+        app:layout_constraintTop_toBottomOf="@id/search_button_top"
+        app:layout_constraintEnd_toStartOf="@id/search_end"
+        app:layout_constraintStart_toEndOf="@id/table_list_id_end"/>
 
     <ListView
         android:id="@+id/kids_staff_list"
@@ -49,25 +58,16 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/list_top"
+        app:layout_constraintTop_toBottomOf="@id/list_bottom"
         app:layout_constraintVertical_bias="0.0" />
 
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_top"
+        android:id="@+id/search_bar_bottom"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.06" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/search_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.105" />
+        app:layout_constraintGuide_percent="0.05" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/search_start"
@@ -75,38 +75,54 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.12"/>
+        app:layout_constraintGuide_percent="0.02"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/button_top"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.06" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/button_bottom"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.105" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/button_end"
+        android:id="@+id/search_end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="vertical"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.985"/>
+        app:layout_constraintGuide_percent="0.995"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/list_top"
+        android:id="@+id/search_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/table_list_id_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_top"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.003" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.048" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.08" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
