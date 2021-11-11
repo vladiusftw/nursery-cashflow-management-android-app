@@ -34,6 +34,5 @@ public class ChargeFragment extends Fragment {
         TextView add_button = v.findViewById(R.id.add_button);
 
         return v;
-
     }
 }

@@ -19,8 +19,8 @@ public class EnrollFragment extends Fragment {
     private TextView charge_button;
     private TextView edit_button;
     private TextView enroll_button;
-
     private boolean admin;
+
     public EnrollFragment(){
 
     }
@@ -43,6 +43,11 @@ public class EnrollFragment extends Fragment {
         edit_button = v.findViewById(R.id.edit);
         enroll_button = v.findViewById(R.id.enrollment);
 
+        // 1- If the user is an admin then it will replace the mid container with the table list admin
+        // fragment and if the user is a staff then it will replace the mid container with the
+        // table list staff fragment
+        // 2- It will remove the button clicked color from all the other buttons and will apply
+        // the button clicked color to the table list button
         table_list_button.setOnClickListener(e->{
             if(admin) putChildFragment("table_list_admin_fragment",new TableListAdminFragment());
             else putChildFragment("table_list_staff_fragment",new TableListStaffFragment());
@@ -50,18 +55,30 @@ public class EnrollFragment extends Fragment {
             setButtonColor(table_list_button);
         });
 
+        // 1- Replace the mid container with the charge fragment
+        // 2- It will remove the button clicked color from all the other buttons and will apply
+        // the button clicked color to the charge button
         charge_button.setOnClickListener(e->{
             putChildFragment("charge_fragment", new ChargeFragment());
             clearButtonColors();
             setButtonColor(charge_button);
         });
 
+        // 1- Replace mid container with the edit fragment
+        // 2- It will remove the button clicked color from all the other buttons and will apply
+        // the button clicked color to the edit button
         edit_button.setOnClickListener(e->{
-
+            if(admin) putChildFragment("edit_admin_fragment", new EditAdminFragment());
+            //else
+            clearButtonColors();
+            setButtonColor(edit_button);
         });
 
+        //
         enroll_button.setOnClickListener(e->{
-
+            if(admin) putChildFragment("enrollment_admin_fragment", new EnrollmentAdminFragment());
+            clearButtonColors();
+            setButtonColor(enroll_button);
         });
 
 
