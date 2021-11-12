@@ -20,6 +20,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
     public DatabaseHelper(Context c) {
         super(c, DATABASE_NAME, null, DATABASE_VERSION);
         this.c = c;
+        this.getWritableDatabase().delete(EXPENSE_TABLE_NAME, null, null);
     }
     private int getMonth(String date){   // gets the month of the date of the expense
         String[] temp = date.split("/");
@@ -34,7 +35,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {  // create the tables in the database
         db.execSQL("CREATE TABLE " + KID_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name TEXT,pName TEXT,contact INTEGER)");
+                "name TEXT,pName TEXT,contact TEXT)");
         db.execSQL("CREATE TABLE " + STAFF_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "username TEXT,password TEXT,isAdmin INTEGER)");
         db.execSQL("CREATE TABLE " + EXPENSE_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
@@ -62,7 +63,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-    public void insertStaff(Staff staff) {  // insert anew staff member into the staff's table
+    public void insertStaff(Staff staff) {  // insert a new staff member into the staff's table
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put("username", staff.getUsername());
@@ -114,15 +115,15 @@ class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor cursor = db.rawQuery("SELECT * FROM " + KID_TABLE_NAME, null);
         int idIndex = cursor.getColumnIndex("id");
-        int nameIndex = cursor.getColumnIndex("detail");
-        int pNameIndex = cursor.getColumnIndex("amount");
-        int contactIndex = cursor.getColumnIndex("date");
+        int nameIndex = cursor.getColumnIndex("name");
+        int pNameIndex = cursor.getColumnIndex("pName");
+        int contactIndex = cursor.getColumnIndex("contact");
         while (cursor.moveToNext()) {
              kids.add(new Kid(
                      cursor.getInt(idIndex),
                      cursor.getString(nameIndex),
                      cursor.getString(pNameIndex),
-                     cursor.getInt(contactIndex)));
+                     cursor.getString(contactIndex)));
         }
         return kids;
     }
@@ -229,7 +230,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display all kids based on the beginning of their id
 
     public ArrayList<Kid> getKidsIdStartsWith ( int id){
         ArrayList<Kid> kids = new ArrayList<>();
@@ -237,15 +238,15 @@ class DatabaseHelper extends SQLiteOpenHelper {
         String q = "SELECT * FROM kid WHERE id LIKE  '" + id + "%'";
         Cursor cursor = db.rawQuery(q, null);
             int idIndex = cursor.getColumnIndex("id");
-            int nameIndex = cursor.getColumnIndex("detail");
-            int pNameIndex = cursor.getColumnIndex("amount");
-            int contactIndex = cursor.getColumnIndex("date");
+            int nameIndex = cursor.getColumnIndex("name");
+            int pNameIndex = cursor.getColumnIndex("pName");
+            int contactIndex = cursor.getColumnIndex("contact");
             while (cursor.moveToNext()) {
                 kids.add(new Kid(
                         cursor.getInt(idIndex),
                         cursor.getString(nameIndex),
                         cursor.getString(pNameIndex),
-                        cursor.getInt(contactIndex)));
+                        cursor.getString(contactIndex)));
             }
             return kids;
     }
@@ -279,6 +280,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 // display a kid's specific statement by month
+    
     public ArrayList<Expense> getStatementByMonth(int id, int month){
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -306,7 +308,8 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display a kid's specific statement based on its year
+    
     public ArrayList<Expense> getStatementByYear(int id, int year){
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -332,7 +335,8 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display a kid's specific statement based on a specific date
+    
     public ArrayList<Expense> getStatementByCustom(int id, String date){
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
@@ -357,7 +361,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display all of a kid's statements by month
 
     public ArrayList<Expense> getStatementsByMonth( int month){
         ArrayList<Expense> expenses = new ArrayList<>();
@@ -384,7 +388,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display all of a kid's statements by year
 
     public ArrayList<Expense> getStatementsByYear(int year){
         ArrayList<Expense> expenses = new ArrayList<>();
@@ -410,7 +414,7 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
 
 
-
+// display all of a kid's statements by a specific date
 
     public ArrayList<Expense> getStatementsByCustom(String date){
         ArrayList<Expense> expenses = new ArrayList<>();
