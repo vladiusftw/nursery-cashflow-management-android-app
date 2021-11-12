@@ -1,16 +1,20 @@
-package com.example.project;
+package com.example.csit242_project.Classes;
+
+import android.annotation.SuppressLint;
 
 import java.text.DecimalFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Expense {
-    private int id;
-    private String detail;
-    private double amount;
-    private final Date date;
+    private final int id;
+    private final String detail;
+    private final double amount;
+    private final String date;
 
-    public Expense(){date = new Date();}
-    public Expense(int id, String detail, double amount, Date date){
+
+    public Expense(int id, String detail, double amount, String date){
         this.id = id;
         this.detail = detail;
         this.amount = amount;
@@ -21,11 +25,17 @@ public class Expense {
     public int getId(){return id;}
     public String getDetail(){return detail;}
     public double getAmount(){return amount;}
-    public Date getDate(){return date;}
+    public String getStringDate(){return date;}
+    @SuppressLint("SimpleDateFormat")
+    public Date getDate() throws ParseException {
+        return new SimpleDateFormat("dd/MM/yyyy").parse(date);
+    }
 
     public String toString(){
         return "ID: " + id + "\tDetail: " + detail + "\tAmount: "
                 + new DecimalFormat("#.##").format(amount) + "\tDate(DD/MM/YYYY): "
-                + date.getDate() + "/" + (date.getMonth()+1) + "/" + (date.getYear()+1900);
+                + date;
     }
+
+
 }
