@@ -8,31 +8,31 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 public class Expense {
-    private final int id;
     private final String detail;
     private final double amount;
     private final String date;
+    private int kidId;
 
-
-    public Expense(int id, String detail, double amount, String date){
-        this.id = id;
+    public Expense(String detail, double amount, String date){
         this.detail = detail;
         this.amount = amount;
         this.date = date;
     }
 
+    public Expense(String detail, double amount, String date, int kidId){
+        this.detail = detail;
+        this.amount = amount;
+        this.date = date;
+        this.kidId = kidId;
+    }
+
     // getters
-    public int getId(){return id;}
     public String getDetail(){return detail;}
     public double getAmount(){return amount;}
     public String getStringDate(){return date;}
-    @SuppressLint("SimpleDateFormat")
-    public Date getDate() throws ParseException {
-        return new SimpleDateFormat("dd/MM/yyyy").parse(date);
-    }
 
     public String toString(){
-        return "ID: " + id + "\tDetail: " + detail + "\tAmount: "
+        return "Detail: " + detail + "\tAmount: "
                 + new DecimalFormat("#.##").format(amount) + "\tDate(DD/MM/YYYY): "
                 + date;
     }

@@ -1,4 +1,6 @@
-package com.example.project;
+package com.example.csit242_project.Classes;
+
+import android.graphics.Bitmap;
 
 public class Staff {
     private int id;
@@ -6,6 +8,11 @@ public class Staff {
     private int isAdmin;
 
     public Staff(){}
+    public Staff(String username, String password,int isAdmin){
+        this.username = username;
+        this.password = password;
+        this.isAdmin = isAdmin;
+    }
     public Staff(int id, String username, String password,int isAdmin){
         this.id = id;
         this.username = username;

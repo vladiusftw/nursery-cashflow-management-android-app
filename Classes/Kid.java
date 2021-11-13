@@ -1,10 +1,15 @@
-package com.example.project;
+package com.example.csit242_project.Classes;
 
 public class Kid {
     private int id;
     private String name,pName,contact;
 
     public Kid(){}
+    public Kid(String name, String pName,String contact){
+        this.name = name;
+        this.pName = pName;
+        this.contact = contact;
+    }
     public Kid(int id, String name, String pName,String contact){
         this.id = id;
         this.name = name;
