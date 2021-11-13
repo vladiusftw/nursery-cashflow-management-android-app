@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/enrollment_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/kids_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Kids"
+        android:textColor="#6b6b6b"
+        android:textSize="32sp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/details_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Details"
+        android:textColor="#6b6b6b"
+        app:layout_constraintTop_toBottomOf="@+id/kids_text"
+        android:textSize="32sp"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelineh1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev1"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinev4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinehh3"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.15"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinehh4"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.21"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinehh5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidelinehh6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidev5"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guidev6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/rounded_view"
+        app:layout_constraintBottom_toBottomOf="@+id/guidelineh1"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelinev1"
+        app:layout_constraintRight_toRightOf="@+id/guidelinev2"
+        app:layout_constraintTop_toBottomOf="@+id/details_text"
+        android:radius="5dp"
+        tools:ignore="NotSibling" />
+
+    <EditText
+        android:id="@+id/enrollment_admin_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Name"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelinev4"
+        app:layout_constraintRight_toRightOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/guidelinehh3" />
+
+    <EditText
+        android:id="@+id/enrollment_admin_parent_name"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Parent Name"
+        android:textSize="25sp"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelinev4"
+        app:layout_constraintRight_toRightOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/guidelinehh4" />
+
+    <EditText
+        android:id="@+id/enrollment_admin_contact"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Contact"
+        android:textSize="25sp"
+        android:inputType="number"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/guidelinev4"
+        app:layout_constraintRight_toRightOf="@+id/guidelinev3"
+        app:layout_constraintTop_toTopOf="@+id/guidelinehh5" />
+
+    <TextView
+        android:id="@+id/enrollment_admin_add_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#87E0F6"
+        android:gravity="center"
+        android:text="Add"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/guidelinehh6"
+        app:layout_constraintLeft_toLeftOf="@+id/guidev5"
+        app:layout_constraintRight_toRightOf="@+id/guidev6" />
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
