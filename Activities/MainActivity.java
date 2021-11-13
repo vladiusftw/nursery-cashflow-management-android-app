@@ -1,19 +1,20 @@
-package com.example.project.Activities;
+package com.example.csit242_project.Activities;
 
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Fragment;
-import android.os.Build;
 import android.os.Bundle;
 import android.widget.ImageView;
 
-import com.example.project.Fragments.EnrollFragment;
-import com.example.project.R;
+import com.example.csit242_project.Classes.DatabaseHelper;
+import com.example.csit242_project.Classes.Expense;
+import com.example.csit242_project.Classes.FunctionsHelper;
+import com.example.csit242_project.Classes.Kid;
+import com.example.csit242_project.FragmentClasses.EnrollFragment;
+import com.example.csit242_project.R;
 
 public class MainActivity extends AppCompatActivity {
 
-    @RequiresApi(api = Build.VERSION_CODES.O)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
         ImageView file_button = findViewById(R.id.file_button);
         ImageView money_button = findViewById(R.id.money_button);
         ImageView user_button = findViewById(R.id.user_button);
+
+        DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
         getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
                 new EnrollFragment(true),"enroll_fragment")
@@ -37,8 +40,6 @@ public class MainActivity extends AppCompatActivity {
                             .addToBackStack("enroll_fragment").commit();
                     kids_button.setColorFilter(getResources().getColor(R.color.black));
                 }
-
-
         });
     }
 }
