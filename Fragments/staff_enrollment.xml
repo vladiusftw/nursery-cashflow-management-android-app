@@ -70,6 +70,13 @@
         app:layout_constraintGuide_percent="0.15"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/pname_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
@@ -77,11 +84,25 @@
         app:layout_constraintGuide_percent="0.21"/>
 
     <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pname_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.26"/>
+
+    <androidx.constraintlayout.widget.Guideline
         android:id="@+id/contact_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contact_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/add_bottom"
@@ -119,7 +140,7 @@
     <EditText
         android:id="@+id/enrollment_admin_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/white"
         android:gravity="center"
@@ -128,12 +149,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"
-        app:layout_constraintTop_toTopOf="@+id/name_top" />
+        app:layout_constraintTop_toTopOf="@+id/name_top"
+        app:layout_constraintBottom_toBottomOf="@+id/name_bottom"/>
 
     <EditText
         android:id="@+id/enrollment_admin_parent_name"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/white"
         android:gravity="center"
@@ -142,12 +164,13 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"
-        app:layout_constraintTop_toTopOf="@+id/pname_top" />
+        app:layout_constraintTop_toTopOf="@+id/pname_top"
+        app:layout_constraintBottom_toBottomOf="@+id/pname_bottom"/>
 
     <EditText
         android:id="@+id/enrollment_admin_contact"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/round_corner"
         android:backgroundTint="@color/white"
         android:gravity="center"
@@ -157,7 +180,8 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"
-        app:layout_constraintTop_toTopOf="@+id/contact_top" />
+        app:layout_constraintTop_toTopOf="@+id/contact_top"
+        app:layout_constraintBottom_toBottomOf="@+id/contact_bottom"/>
 
     <TextView
         android:id="@+id/enrollment_admin_add_button"
