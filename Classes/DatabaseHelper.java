@@ -10,7 +10,7 @@ import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.Date;
 
-class DatabaseHelper extends SQLiteOpenHelper {
+public class DatabaseHelper extends SQLiteOpenHelper {
     private Context c;
     private static final String DATABASE_NAME = "MyNurseryDB";
     private static final String KID_TABLE_NAME = "Kid";
@@ -36,9 +36,9 @@ class DatabaseHelper extends SQLiteOpenHelper {
 
     public void onCreate(SQLiteDatabase db) {  // create the tables in the database
         db.execSQL("CREATE TABLE " + KID_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "name TEXT,pName TEXT,contact TEXT)");
+                "name TEXT NOT NULL,pName TEXT NOT NULL,contact TEXT NOT NULL)");
         db.execSQL("CREATE TABLE " + STAFF_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
-                "username TEXT,password TEXT,isAdmin INTEGER, pic BLOB)");
+                "username TEXT NOT NULL UNIQUE,password TEXT NOT NULL,isAdmin INTEGER NOT NULL, pic BLOB)");
         db.execSQL("CREATE TABLE " + EXPENSE_TABLE_NAME + "(id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "detail TEXT,amount REAL,date TEXT,kidId INTEGER, FOREIGN KEY (kidId) REFERENCES "
                 + KID_TABLE_NAME + "(id))");
@@ -380,5 +380,20 @@ class DatabaseHelper extends SQLiteOpenHelper {
             }
         }
         return expenses;
+    }
+
+    // gets the staff that has the given username and password
+    // if doesn't exist then returns null
+    public int getStaffIdByUserPass(String username, String password){
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery("SELECT * FROM " + STAFF_TABLE_NAME + " WHERE username = "
+        + username + " AND password = " + password,null);
+        int idIndex = cursor.getColumnIndex("id");
+        int id = 0;
+        while(cursor.moveToNext()){
+            id = cursor.getInt(idIndex);
+        }
+        db.close();
+        return id;
     }
 }
