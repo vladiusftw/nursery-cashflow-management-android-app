@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -95,6 +94,29 @@
         app:layout_constraintTop_toBottomOf="@id/search_button_top"
         app:layout_constraintEnd_toStartOf="@id/search_end"
         app:layout_constraintStart_toEndOf="@id/edit_id_end"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ID:"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/list_top"
+        app:layout_constraintLeft_toLeftOf="@id/update_start"
+        app:layout_constraintRight_toRightOf="@+id/update_end"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar_bottom"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/list_top"
+        app:layout_constraintLeft_toLeftOf="@id/delete_start"
+        app:layout_constraintRight_toRightOf="@+id/delete_end"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar_bottom"/>
+
 
     <LinearLayout
         android:layout_width="0dp"
@@ -289,7 +311,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.14" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/list_bottom"
@@ -297,7 +319,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.3" />
+        app:layout_constraintGuide_percent="0.34" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/list_start"
@@ -329,7 +351,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.32"/>
+        app:layout_constraintGuide_percent="0.37"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/buttons_bottom"
@@ -337,7 +359,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.36"/>
+        app:layout_constraintGuide_percent="0.41"/>
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/update_start"
