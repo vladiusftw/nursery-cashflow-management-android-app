@@ -18,17 +18,15 @@ import com.example.csit242_project.Classes.Kid;
 import com.example.csit242_project.Classes.Staff;
 import com.example.csit242_project.R;
 
-public class EditAdminFragment extends Fragment {
+public class EditStaffFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View v = inflater.inflate(R.layout.edit_admin_fragment,container,false);
+        View v = inflater.inflate(R.layout.edit_staff_fragment,container,false);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
 
-        SwitchCompat toggle = v.findViewById(R.id.edit_admin_toggle);
-
-        EditText id_edit = v.findViewById(R.id.edit_admin_id_search);
+        EditText id_edit = v.findViewById(R.id.edit_staff_id_search);
 
         EditText e1 = v.findViewById(R.id.edit_name);
         EditText e2 = v.findViewById(R.id.edit_parent_name);
@@ -39,29 +37,16 @@ public class EditAdminFragment extends Fragment {
         TextView update_button = v.findViewById(R.id.update_button);
         TextView delete_button = v.findViewById(R.id.delete_button);
 
-
-        TextView t1 = v.findViewById(R.id.edit_admin_t1);
-        TextView t2 = v.findViewById(R.id.edit_admin_t2);
-        TextView t3 = v.findViewById(R.id.edit_admin_t3);
-
-        TextView id_text_view = v.findViewById(R.id.edit_admin_id);
+        TextView id_text_view = v.findViewById(R.id.edit_staff_id);
 
         search_button.setOnClickListener(e->{
             String id_text = FunctionsHelper.lettersAndNumbersOnly(id_edit.getText()+"");
             if(id_text.length()==0){ // nothing entered
                 Toast.makeText(getActivity(),"No Value Entered!",Toast.LENGTH_SHORT).show();
-            }
-            else if(toggle.isChecked()){ // staff
-                if(databaseHelper.isValidStaffId(Integer.parseInt(id_text))){
-                    id_text_view.setText(id_text);
-                    autoFill(e1,e2,e3,toggle.isChecked(),Integer.parseInt(id_text),databaseHelper);
-                }else{ // staff not found
-                    Toast.makeText(getActivity(),"Invalid ID!",Toast.LENGTH_SHORT).show();
-                }
             }else{ // kid
                 if(databaseHelper.isValidKidId(Integer.parseInt(id_text))){
                     id_text_view.setText(id_text);
-                    autoFill(e1,e2,e3,toggle.isChecked(),Integer.parseInt(id_text),databaseHelper);
+                    autoFill(e1,e2,e3,Integer.parseInt(id_text),databaseHelper);
                 }else{ // kid not found
                     Toast.makeText(getActivity(),"Invalid ID!",Toast.LENGTH_SHORT).show();
                 }
@@ -70,17 +55,6 @@ public class EditAdminFragment extends Fragment {
 
         update_button.setOnClickListener(e->{
             if(FunctionsHelper.isNotEmpty(e1,e2,e3)){ // not empty
-                if(toggle.isChecked()){ // staff
-                    String username = FunctionsHelper.lettersAndNumbersOnly(e1.getText()+"");
-                    String password = FunctionsHelper.removeWhiteSpace(e2.getText()+"");
-                    int isAdmin = Integer.parseInt(e3.getText()+"");
-                    if(isAdmin != 0 && isAdmin != 1){ // invalid
-                        Toast.makeText(getActivity(),"If admin enter 1 else enter 0",Toast.LENGTH_SHORT).show();
-                    }else{ // valid
-                        databaseHelper.updateStaff(new Staff(username,password,isAdmin),Integer.parseInt(id_text_view.getText()+""));
-                        Toast.makeText(getActivity(),"Staff updated!",Toast.LENGTH_SHORT).show();
-                    }
-                }else{ // kid
                     String name = FunctionsHelper.lettersAndNumbersOnly(e1.getText()+"");
                     String pName = FunctionsHelper.lettersAndNumbersOnly(e2.getText()+"");
                     String contact = FunctionsHelper.removeWhiteSpace(e3.getText()+"");
@@ -90,7 +64,6 @@ public class EditAdminFragment extends Fragment {
                         databaseHelper.updateKid(new Kid(name,pName,contact),Integer.parseInt(id_text_view.getText()+""));
                         Toast.makeText(getActivity(),"Kid updated!",Toast.LENGTH_SHORT).show();
                     }
-                }
             }else{ // empty
                 Toast.makeText(getActivity(),"Empty Fields!",Toast.LENGTH_SHORT).show();
             }
@@ -105,35 +78,14 @@ public class EditAdminFragment extends Fragment {
             }
         });
 
-        toggle.setOnClickListener(e->{
-            FunctionsHelper.setHints(e1,e2,e3,toggle.isChecked());
-            if(toggle.isChecked()){
-                t1.setText("Username:");
-                t2.setText("Password:");
-                t3.setText("Level:");
-            }
-            else{
-                t1.setText("Full Name:");
-                t2.setText("Parent Name:");
-                t3.setText("Contact:");
-            }
-            id_edit.setText("");
-        });
         return v;
     }
 
-    private void autoFill(EditText e1, EditText e2, EditText e3,boolean isChecked, int id, DatabaseHelper databaseHelper){
-        if(isChecked){
-            Staff staff = databaseHelper.getStaffById(id);
-            e1.setText(staff.getUsername());
-            e2.setText(staff.getPassword());
-            e3.setText(staff.isAdmin());
-        }else{
+    private void autoFill(EditText e1, EditText e2, EditText e3,int id, DatabaseHelper databaseHelper){
             Kid kid = databaseHelper.getKidId(id);
             e1.setText(kid.getName());
             e2.setText(kid.getPName());
             e3.setText(kid.getContact());
-        }
     }
 
 

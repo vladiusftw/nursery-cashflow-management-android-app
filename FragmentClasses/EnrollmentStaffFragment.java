@@ -17,15 +17,13 @@ import com.example.csit242_project.Classes.Kid;
 import com.example.csit242_project.Classes.Staff;
 import com.example.csit242_project.R;
 
-public class EnrollmentAdminFragment extends Fragment {
+public class EnrollmentStaffFragment extends Fragment {
 
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View v = inflater.inflate(R.layout.enrollment_admin_fragment,container,false);
+        View v = inflater.inflate(R.layout.enrollment_staff_fragment,container,false);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
-
-        SwitchCompat toggle = v.findViewById(R.id.enrollment_admin_toggle);
 
         EditText e1 = v.findViewById(R.id.enrollment_admin_name);
         EditText e2 = v.findViewById(R.id.enrollment_admin_parent_name);
@@ -35,18 +33,6 @@ public class EnrollmentAdminFragment extends Fragment {
 
         add_button.setOnClickListener(e->{
             if(FunctionsHelper.isNotEmpty(e1,e2,e3)){ // not empty
-                if(toggle.isChecked()){ // staff
-                    String username = FunctionsHelper.lettersAndNumbersOnly(e1.getText()+"");
-                    String password = FunctionsHelper.removeWhiteSpace(e2.getText()+"");
-                    int isAdmin = Integer.parseInt(e3.getText()+"");
-                    if(isAdmin != 0 && isAdmin != 1){
-                        Toast.makeText(getActivity(),"If admin enter 1 else enter 0",Toast.LENGTH_SHORT).show();
-                    }else{
-                        databaseHelper.insertStaff(new Staff(username,password,isAdmin));
-                        Toast.makeText(getActivity(),"Staff Added!",Toast.LENGTH_SHORT).show();
-                        clearAllFields(e1,e2,e3);
-                    }
-                }else{ // kid
                     String name = FunctionsHelper.lettersAndNumbersOnly(e1.getText()+"");
                     String pName = FunctionsHelper.lettersAndNumbersOnly(e2.getText()+"");
                     String contact = FunctionsHelper.lettersAndNumbersOnly(e3.getText()+"");
@@ -57,14 +43,9 @@ public class EnrollmentAdminFragment extends Fragment {
                         Toast.makeText(getActivity(),"Kid Added!",Toast.LENGTH_SHORT).show();
                         clearAllFields(e1,e2,e3);
                     }
-                }
             }else{ // empty
                 Toast.makeText(getActivity(),"EMPTY FIELDS!",Toast.LENGTH_SHORT).show();
             }});
-
-        toggle.setOnClickListener(e->{
-            FunctionsHelper.setHints(e1,e2,e3,toggle.isChecked());
-        });
 
         return v;
     }
