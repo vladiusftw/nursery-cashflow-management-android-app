@@ -31,7 +31,7 @@
             android:layout_height="match_parent"
             android:layout_weight="3.8"
             android:gravity="center"
-            app:thumbTint="@color/switch_color"
+            app:thumbTint="@color/button_color"
             app:trackTint="@color/grey"/>
 
         <TextView
@@ -68,7 +68,7 @@
         app:layout_constraintEnd_toStartOf="@id/search_icon_end"/>
 
     <EditText
-        android:id="@+id/edit_id"
+        android:id="@+id/edit_admin_id_search"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@android:color/transparent"
@@ -107,6 +107,7 @@
         app:layout_constraintTop_toBottomOf="@+id/search_bar_bottom"/>
 
     <TextView
+        android:id="@+id/edit_admin_id"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:text=""
@@ -155,8 +156,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Name"
-                android:gravity="center"/>
-
+                android:gravity="center"
+                android:maxLength="15"/>
 
         </LinearLayout>
 
@@ -184,7 +185,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Parent Name"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:maxLength="15"/>
 
 
         </LinearLayout>
@@ -214,7 +216,8 @@
                 android:layout_weight="0.5"
                 android:hint="Contact"
                 android:gravity="center"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="10"/>
 
 
         </LinearLayout>

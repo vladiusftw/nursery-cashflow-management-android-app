@@ -28,7 +28,7 @@
 
 
         <androidx.appcompat.widget.SwitchCompat
-            android:id="@+id/toggle"
+            android:id="@+id/enrollment_admin_toggle"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="3.8"
@@ -70,8 +70,7 @@
         app:layout_constraintLeft_toLeftOf="@+id/form_left"
         app:layout_constraintRight_toRightOf="@+id/form_right"
         app:layout_constraintTop_toBottomOf="@+id/details_text"
-        android:radius="5dp"
-        tools:ignore="NotSibling" />
+        android:radius="5dp"/>
 
     <EditText
         android:id="@+id/enrollment_admin_name"
@@ -82,6 +81,8 @@
         android:gravity="center"
         android:hint="Name"
         android:textSize="25sp"
+        android:maxLength="15"
+        android:textColor="@color/text"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"
@@ -97,6 +98,8 @@
         android:gravity="center"
         android:hint="Parent Name"
         android:textSize="25sp"
+        android:maxLength="15"
+        android:textColor="@color/text"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"
@@ -112,7 +115,9 @@
         android:gravity="center"
         android:hint="Contact"
         android:textSize="25sp"
+        android:textColor="@color/text"
         android:inputType="number"
+        android:maxLength="10"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintLeft_toLeftOf="@+id/input_left"
         app:layout_constraintRight_toRightOf="@+id/input_right"

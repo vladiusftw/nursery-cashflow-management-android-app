@@ -34,7 +34,7 @@
             android:layout_weight="3.8"
             android:gravity="center"
             app:trackTint="@color/grey"
-            app:thumbTint="@color/switch_color"/>
+            app:thumbTint="@color/button_color"/>
 
         <TextView
             android:id="@+id/staff_text"
@@ -82,7 +82,7 @@
         app:layout_constraintEnd_toStartOf="@id/search_button"
         android:singleLine="true"
         android:inputType="number"
-        android:maxLength="7"/>
+        android:maxLength="5"/>
 
     <TextView
         android:id="@+id/search_button"
@@ -99,6 +99,55 @@
         app:layout_constraintEnd_toStartOf="@id/search_end"
         app:layout_constraintStart_toEndOf="@id/table_list_id_end"/>
 
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        app:layout_constraintBottom_toBottomOf="@id/list_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/list_top"
+        android:background="@drawable/search_bar_color">
+
+        <TextView
+            android:id="@+id/column1_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="ID"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column2_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="PARENT"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column3_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="NAME"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column4_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="CONTACT"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
     <ListView
         android:id="@+id/kids_staff_list"
         android:layout_width="match_parent"
@@ -107,7 +156,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/list_top"
+        app:layout_constraintTop_toBottomOf="@id/list_view_top"
         app:layout_constraintVertical_bias="0.0" />
 
     <androidx.constraintlayout.widget.Guideline
@@ -181,6 +230,22 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
         app:layout_constraintGuide_percent="0.065" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_view_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.2" />
 
 
 

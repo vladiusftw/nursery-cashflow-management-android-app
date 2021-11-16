@@ -189,10 +189,10 @@
         app:layout_constraintBottom_toTopOf="@id/list_bottom"
         app:layout_constraintStart_toEndOf="@id/list_start"
         app:layout_constraintEnd_toStartOf="@id/list_end"
-        android:background="@drawable/rounded_view"
+        android:background="@drawable/round_corner"
         android:weightSum="9"
         android:showDividers="middle"
-        android:divider="@drawable/divider_grey">
+        android:divider="@drawable/grey_divider">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -218,7 +218,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Name"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:maxLength="15"/>
 
 
         </LinearLayout>
@@ -247,7 +248,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Parent Name"
-                android:gravity="center"/>
+                android:gravity="center"
+                android:maxLength="15"/>
 
 
         </LinearLayout>
@@ -277,7 +279,8 @@
                 android:layout_weight="0.5"
                 android:hint="Contact"
                 android:gravity="center"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:maxLength="10"/>
 
         </LinearLayout>
     </LinearLayout>
