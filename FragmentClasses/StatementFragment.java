@@ -29,7 +29,7 @@ public class StatementFragment extends Fragment {
         });
 
 
-        /*expense_button.setOnClickListener(e->{
+       /* expense_button.setOnClickListener(e->{
             Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_expense_fragment");
             if(fragment==null || !fragment.isVisible()){
                 getChildFragmentManager().beginTransaction().replace(R.id.statement_mid_container
