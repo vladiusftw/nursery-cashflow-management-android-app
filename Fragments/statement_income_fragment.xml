@@ -25,6 +25,13 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.06" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/income_mid_container_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.08" />
+
     <Spinner
         android:id="@+id/type_dropdown"
         android:layout_width="0dp"
@@ -34,7 +41,8 @@
         app:layout_constraintEnd_toStartOf="@+id/spinner_right"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toTopOf="@+id/section_bottom"/>
+        app:layout_constraintBottom_toTopOf="@+id/section_bottom"
+        android:gravity="center"/>
 
 
     <EditText
@@ -49,6 +57,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/id_left"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <RelativeLayout
+        android:id="@+id/income_mid_container"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/income_mid_container_top"
+        app:layout_constraintBottom_toBottomOf="parent"/>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
