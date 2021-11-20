@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.EditText;
 import android.widget.Spinner;
 
 import com.example.csit242_project.Classes.FunctionsHelper;
@@ -16,8 +17,13 @@ import java.util.ArrayList;
 
 public class IncomeFragment extends Fragment {
 
+    EditText input_id;
+
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.statement_income_fragment,container,false);
+
+        input_id = v.findViewById(R.id.input_id);
+
 
         Spinner income_dropdown = v.findViewById(R.id.type_dropdown);
 
@@ -32,7 +38,7 @@ public class IncomeFragment extends Fragment {
                             Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_monthly_fragment");
                             if(fragment == null || !fragment.isVisible()){
                                 getChildFragmentManager().beginTransaction()
-                                        .replace(R.id.income_mid_container,new MonthlyFragment(),
+                                        .replace(R.id.income_mid_container,new MonthlyFragment(input_id),
                                                 "statement_monthly_fragment")
                                         .addToBackStack("statement_monthly_fragment").commit();
                             }
