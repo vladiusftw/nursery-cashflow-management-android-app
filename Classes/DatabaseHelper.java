@@ -30,7 +30,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     private int getYear(String date){  //gets the year of the date of the expense
         String[] temp = date.split("/");
-        return Integer.parseInt(temp[0]);
+        return Integer.parseInt(temp[2]);
     }
 
     @Override
@@ -298,7 +298,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
             while (cursor.moveToNext()) {
-                if(getMonth((cursor.getString(dateIndex)))==month && getYear(cursor.getString(dateIndex)) == year){
+                if(getMonth(cursor.getString(dateIndex))==month && getYear(cursor.getString(dateIndex)) == year){
                     expenses.add(new Expense(
                             cursor.getString(detailIndex),
                             cursor.getDouble(amountIndex),
@@ -309,6 +309,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             db.close();
             return expenses;
         }catch (SQLiteException e){
+
             return expenses;
         }
     }
@@ -373,13 +374,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int detailIndex = cursor.getColumnIndex("detail");
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
+            int kidIdIndex = cursor.getColumnIndex("kidId");
             while (cursor.moveToNext()) {
                 if(getMonth((cursor.getString(dateIndex)))==month && getYear(cursor.getString(dateIndex)) == year){
                     expenses.add(new Expense(
                             cursor.getString(detailIndex),
                             cursor.getDouble(amountIndex),
-                            cursor.getString(dateIndex)));
-
+                            cursor.getString(dateIndex),
+                            cursor.getInt(kidIdIndex)));
                 }
             }
             cursor.close();
@@ -395,17 +397,18 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         try{
-            Cursor cursor = db.rawQuery("SELECT * FROM " + EXPENSE_TABLE_NAME, null); // where foreign key is null ont forget to add!!!!!
+            Cursor cursor = db.rawQuery("SELECT * FROM " + EXPENSE_TABLE_NAME + " WHERE kidId IS NOT NULL", null); // where foreign key is null ont forget to add!!!!!
             int detailIndex = cursor.getColumnIndex("detail");
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
-            int fkIndex= cursor.getColumnIndex("kidId");
+            int kidId= cursor.getColumnIndex("kidId");
             while (cursor.moveToNext()) {
-                if(cursor.getInt(fkIndex)!=0 && getYear((cursor.getString(dateIndex)))==year){
+                if(getYear((cursor.getString(dateIndex)))==year){
                     expenses.add(new Expense(
                             cursor.getString(detailIndex),
                             cursor.getDouble(amountIndex),
-                            cursor.getString(dateIndex)));
+                            cursor.getString(dateIndex),
+                            cursor.getInt(kidId)));
                 }
             }
             cursor.close();
@@ -566,4 +569,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             return null;
         }
     }
+
+    public boolean deleteKidById(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL("DELETE FROM " + KID_TABLE_NAME + " WHERE id = " + id);
+            db.close();
+            return true;
+        }catch (SQLiteException e){
+            return false;
+        }
+    }
+
+    public boolean deleteStaffById(int id){
+        SQLiteDatabase db = this.getWritableDatabase();
+        try {
+            db.execSQL("DELETE FROM " + STAFF_TABLE_NAME + " WHERE id = " + id);
+            db.close();
+            return true;
+        }catch (SQLiteException e){
+            return false;
+        }
+    }
+
 }
