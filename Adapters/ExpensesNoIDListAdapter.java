@@ -14,9 +14,8 @@ import com.example.csit242_project.R;
 import java.util.ArrayList;
 
 public class ExpensesNoIDListAdapter extends ArrayAdapter<Expense> {
-
-    private Context c;
-    private ArrayList<Expense> expenses;
+    private final Context c;
+    private final ArrayList<Expense> expenses;
 
     public ExpensesNoIDListAdapter(Context c, ArrayList<Expense> expenses){
         super(c,0,expenses);
