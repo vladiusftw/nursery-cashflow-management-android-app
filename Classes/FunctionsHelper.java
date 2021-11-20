@@ -76,13 +76,27 @@ public class FunctionsHelper {
     public static String[] maxDays(int days){
         String[] arr = new String[days];
         for(int i = 1; i <= arr.length;i++){
-            arr[i] = i+"";
+            arr[i-1] = i+"";
         }
         return arr;
     }
 
     public static String[] details(){
         return new String[]{"MONTHLY","YEARLY","CUSTOM"};
+    }
+
+    public static String[] months(){
+        return new String[]{"1","2","3","4","5","6","7","8","9","10","11","12"};
+    }
+
+    public static String[] years(){
+        int currYear = new Date().getYear()+1900;
+        String[] years = new String[20];
+        for(int i = 0; i < 20;i++){
+            years[i] = currYear + "";
+            currYear--;
+        }
+        return years;
     }
 
     public static int getMaxDayByMonth(int month,int year){
@@ -100,6 +114,7 @@ public class FunctionsHelper {
             case 9:
             case 11:
                 return 30;
+            case 2:
             default:
                 return isLeapYear(year) ? 29 : 28;
         }
