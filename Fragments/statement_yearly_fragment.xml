@@ -12,13 +12,13 @@
         android:text="From:"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@+id/from_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/month_dropdown"
+        app:layout_constraintEnd_toStartOf="@+id/yearly_dropdown"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Spinner
-        android:id="@+id/month_dropdown"
+        android:id="@+id/yearly_dropdown"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/dropdown_shape"

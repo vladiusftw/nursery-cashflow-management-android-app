@@ -79,6 +79,7 @@
         app:layout_constraintGuide_percent="0.63"/>
 
     <TextView
+        android:id="@+id/monthly_generate_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"

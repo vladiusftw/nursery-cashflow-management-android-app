@@ -56,7 +56,8 @@
         app:layout_constraintBottom_toTopOf="@+id/section_bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/id_left"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:inputType="number"/>
 
     <RelativeLayout
         android:id="@+id/income_mid_container"
