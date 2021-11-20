@@ -65,6 +65,7 @@
         app:layout_constraintGuide_percent="0.63"/>
 
     <TextView
+        android:id="@+id/yearly_generate_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"
@@ -106,6 +107,7 @@
         app:layout_constraintGuide_percent="0.68"/>
 
     <TextView
+        android:id="@+id/yearly_generate_all_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"
