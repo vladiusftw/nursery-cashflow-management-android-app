@@ -289,7 +289,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // get specific kid statements on specific month
-    public ArrayList<Expense> getStatementByMonth(int id, int month){
+    public ArrayList<Expense> getStatementByMonth(int id, int month, int year){
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         try{
@@ -298,7 +298,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
             while (cursor.moveToNext()) {
-                if(getMonth((cursor.getString(dateIndex)))==month){
+                if(getMonth((cursor.getString(dateIndex)))==month && getYear(cursor.getString(dateIndex)) == year){
                     expenses.add(new Expense(
                             cursor.getString(detailIndex),
                             cursor.getDouble(amountIndex),
@@ -365,7 +365,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     // get all kids statements on specific month
-    public ArrayList<Expense> getStatementsByMonth(int month){
+    public ArrayList<Expense> getStatementsByMonth(int month, int year){
         ArrayList<Expense> expenses = new ArrayList<>();
         SQLiteDatabase db = this.getWritableDatabase();
         try{
@@ -374,7 +374,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
             while (cursor.moveToNext()) {
-                if(getMonth((cursor.getString(dateIndex)))==month){
+                if(getMonth((cursor.getString(dateIndex)))==month && getYear(cursor.getString(dateIndex)) == year){
                     expenses.add(new Expense(
                             cursor.getString(detailIndex),
                             cursor.getDouble(amountIndex),
