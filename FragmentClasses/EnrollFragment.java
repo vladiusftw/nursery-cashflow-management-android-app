@@ -28,7 +28,7 @@ public class EnrollFragment extends Fragment {
 
     @SuppressLint("ValidFragment")
     public EnrollFragment(boolean admin){
-        this.admin = !admin;
+        this.admin = admin;
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")

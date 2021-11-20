@@ -48,7 +48,7 @@ public class IncomeFragment extends Fragment {
                             Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_yearly_fragment");
                             if(fragment == null || !fragment.isVisible()){
                                 getChildFragmentManager().beginTransaction()
-                                        .replace(R.id.income_mid_container,new YearlyFragment(),
+                                        .replace(R.id.income_mid_container,new YearlyFragment(input_id),
                                                 "statement_yearly_fragment")
                                         .addToBackStack("statement_yearly_fragment").commit();
                             }
