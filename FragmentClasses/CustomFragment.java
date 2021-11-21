@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
+import android.widget.TextView;
 
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.R;
@@ -25,6 +26,9 @@ public class CustomFragment extends Fragment {
         Spinner to_month_spinner = v.findViewById(R.id.month_dropdown2);
         Spinner from_year_spinner = v.findViewById(R.id.year_dropdown);
         Spinner to_year_spinner = v.findViewById(R.id.year_dropdown2);
+
+        TextView generate_button = v.findViewById(R.id.custom_generate_button);
+       /* TextView generate_all_button = v.findViewById(R.id.);*/
 
         ArrayAdapter<String> monthAdapter = new ArrayAdapter<>(getActivity(),R.layout.single_dropdown_item,FunctionsHelper.months());
         from_month_spinner.setAdapter(monthAdapter);

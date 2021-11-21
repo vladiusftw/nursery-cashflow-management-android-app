@@ -3,21 +3,18 @@ package com.example.csit242_project.FragmentClasses;
 import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.csit242_project.Adapters.ExpensesListAdapter;
 import com.example.csit242_project.Adapters.ExpensesNoIDListAdapter;
-import com.example.csit242_project.Adapters.KidsListAdapter;
 import com.example.csit242_project.Classes.DatabaseHelper;
 import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
@@ -54,6 +51,9 @@ public class MonthlyFragment extends Fragment {
         TextView monthly_generate_button = v.findViewById(R.id.monthly_generate_button);
         TextView monthly_generate_all_button = v.findViewById(R.id.monthly_generate_all_button);
 
+        LinearLayout generate_layout = v.findViewById(R.id.generate_linear_layout);
+        LinearLayout generate_all_layout = v.findViewById(R.id.generate_all_linear_layout);
+
         // gets the given ID and given month and year
         // then gets all expenses (income) done by this specific kid with the specified date
         monthly_generate_button.setOnClickListener(e->{
@@ -64,6 +64,8 @@ public class MonthlyFragment extends Fragment {
                         Integer.parseInt(yearly_spinner.getSelectedItem().toString()));
                 if(expenses.size() != 0){
                     listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                    generate_layout.setVisibility(View.VISIBLE);
+                    generate_all_layout.setVisibility(View.INVISIBLE);
                 }else{
                     FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
                             + input_text + " From Given Date");
@@ -83,6 +85,8 @@ public class MonthlyFragment extends Fragment {
             );
             if(expenses.size() != 0){
                 listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                generate_all_layout.setVisibility(View.VISIBLE);
+                generate_layout.setVisibility(View.INVISIBLE);
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");

@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -46,6 +47,9 @@ public class YearlyFragment extends Fragment {
         TextView generate_button = v.findViewById(R.id.yearly_generate_button);
         TextView generate_all_button = v.findViewById(R.id.yearly_generate_all_button);
 
+        LinearLayout generate_layout = v.findViewById(R.id.generate_linear_layout);
+        LinearLayout generate_all_layout = v.findViewById(R.id.generate_all_linear_layout);
+
         // gets the given ID and given year
         // then gets all expenses (income) done by this specific kid with the specified date
         generate_button.setOnClickListener(e->{
@@ -55,6 +59,8 @@ public class YearlyFragment extends Fragment {
                         Integer.parseInt(yearly_spinner.getSelectedItem().toString()));
                 if(expenses.size() != 0){
                     listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                    generate_layout.setVisibility(View.VISIBLE);
+                    generate_all_layout.setVisibility(View.INVISIBLE);
                 }else{
                     FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
                             + input_text + " From Given Date");
@@ -73,6 +79,8 @@ public class YearlyFragment extends Fragment {
             );
             if(expenses.size() != 0){
                 listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                generate_all_layout.setVisibility(View.VISIBLE);
+                generate_layout.setVisibility(View.INVISIBLE);
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");
