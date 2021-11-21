@@ -1,11 +1,6 @@
 package com.example.csit242_project.Classes;
 
-import android.annotation.SuppressLint;
-
 import java.text.DecimalFormat;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 
 public class Expense {
     private final String detail;
@@ -30,6 +25,7 @@ public class Expense {
     public String getDetail(){return detail;}
     public double getAmount(){return amount;}
     public String getStringDate(){return date;}
+    public int getKidId(){return kidId;}
 
     public String toString(){
         return "Detail: " + detail + "\tAmount: "
