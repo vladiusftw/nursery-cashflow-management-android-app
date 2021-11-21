@@ -152,6 +152,7 @@
         app:layout_constraintGuide_percent="0.63"/>
 
     <TextView
+        android:id="@+id/custom_generate_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"
@@ -163,12 +164,55 @@
         app:layout_constraintRight_toRightOf="@+id/generate_right"
         app:layout_constraintBottom_toBottomOf="@+id/generate_bottom"/>
 
+    <TextView
+        android:id="@+id/custom_generate_all_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/button_click_color"
+        android:text="Generate All"
+        android:textSize="22sp"
+        android:textAlignment="center"
+        android:singleLine="true"
+        android:ellipsize="none"
+        app:layout_constraintTop_toBottomOf="@id/generate_all_button_top"
+        app:layout_constraintLeft_toLeftOf="@+id/generate_all_left"
+        app:layout_constraintRight_toRightOf="@+id/generate_all_right"
+        app:layout_constraintBottom_toBottomOf="@+id/generate_all_button_bottom"/>
+
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/list_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.32"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_button_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.2" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_button_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.24" />
 
     <ListView
         android:id="@+id/custom_list"
