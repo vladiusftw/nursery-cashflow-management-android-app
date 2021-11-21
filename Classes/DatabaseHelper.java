@@ -6,8 +6,6 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
-import android.widget.Toast;
 
 import java.text.ParseException;
 import java.util.ArrayList;
@@ -351,7 +349,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (cursor.moveToNext()) {
                 String stringDate = cursor.getString(dateIndex);
                 Date date = FunctionsHelper.getDate(stringDate);
-                if(date.after(date1) && date.before(date2)){
+                if((date.after(date1) && date.before(date2)) || date.equals(date1) || date.equals(date2)){
                     String detail = cursor.getString(detailIndex);
                     double amount = cursor.getDouble(amountIndex);
                     expenses.add(new Expense(detail,amount,stringDate));
@@ -432,7 +430,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             while (cursor.moveToNext()) {
                 String stringDate = cursor.getString(dateIndex);
                 Date date = FunctionsHelper.getDate(stringDate);
-                if(date.after(date1) && date.before(date2)){
+                if((date.after(date1) && date.before(date2)) || date.equals(date1) || date.equals(date2)){
                     String detail = cursor.getString(detailIndex);
                     double amount = cursor.getDouble(amountIndex);
                     expenses.add(new Expense(detail,amount,stringDate));
