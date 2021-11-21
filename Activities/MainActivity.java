@@ -11,6 +11,7 @@ import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.Classes.Kid;
 import com.example.csit242_project.FragmentClasses.EnrollFragment;
+import com.example.csit242_project.FragmentClasses.StatementFragment;
 import com.example.csit242_project.R;
 
 public class MainActivity extends AppCompatActivity {
@@ -25,12 +26,10 @@ public class MainActivity extends AppCompatActivity {
         ImageView money_button = findViewById(R.id.money_button);
         ImageView user_button = findViewById(R.id.user_button);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
         getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
                 new EnrollFragment(true),"enroll_fragment")
                 .addToBackStack("enroll_fragment").commit();
-        kids_button.setColorFilter(getResources().getColor(R.color.black));
+        kids_button.setColorFilter(getResources().getColor(R.color.white));
 
         kids_button.setOnClickListener(e->{
             Fragment fragment = getFragmentManager().findFragmentByTag("enroll_fragment");
@@ -38,8 +37,27 @@ public class MainActivity extends AppCompatActivity {
                     getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
                             new EnrollFragment(true),"enroll_fragment")
                             .addToBackStack("enroll_fragment").commit();
-                    kids_button.setColorFilter(getResources().getColor(R.color.black));
+                    clearColor(kids_button,file_button,money_button,user_button);
+                    kids_button.setColorFilter(getResources().getColor(R.color.white));
                 }
         });
+
+        file_button.setOnClickListener(e->{
+            Fragment fragment = getFragmentManager().findFragmentByTag("statement_fragment");
+            if(fragment == null || !fragment.isVisible()){
+                getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
+                        new StatementFragment(),"statement_fragment")
+                        .addToBackStack("statement_fragment").commit();
+                clearColor(kids_button,file_button,money_button,user_button);
+                file_button.setColorFilter(getResources().getColor(R.color.white));
+            }
+        });
+    }
+
+    private void clearColor(ImageView img1, ImageView img2, ImageView img3, ImageView img4){
+        img1.setColorFilter(null);
+        img2.setColorFilter(null);
+        img3.setColorFilter(null);
+        img4.setColorFilter(null);
     }
 }
