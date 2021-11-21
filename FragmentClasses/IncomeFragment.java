@@ -13,8 +13,6 @@ import android.widget.Spinner;
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.R;
 
-import java.util.ArrayList;
-
 public class IncomeFragment extends Fragment {
 
     EditText input_id;
@@ -60,7 +58,7 @@ public class IncomeFragment extends Fragment {
                             Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_custom_fragment");
                             if(fragment == null || !fragment.isVisible()){
                                 getChildFragmentManager().beginTransaction()
-                                        .replace(R.id.income_mid_container,new CustomFragment(),
+                                        .replace(R.id.income_mid_container,new CustomFragment(input_id),
                                                 "statement_custom_fragment")
                                         .addToBackStack("statement_custom_fragment").commit();
                             }

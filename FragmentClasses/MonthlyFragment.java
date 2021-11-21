@@ -57,6 +57,7 @@ public class MonthlyFragment extends Fragment {
         // gets the given ID and given month and year
         // then gets all expenses (income) done by this specific kid with the specified date
         monthly_generate_button.setOnClickListener(e->{
+            listView.setAdapter(null);
             String input_text = input_id.getText()+"";
             if(input_text.length() != 0){
                 ArrayList<Expense> expenses = databaseHelper.getStatementByMonth(Integer.parseInt(input_text),
@@ -79,6 +80,7 @@ public class MonthlyFragment extends Fragment {
         // gets the given month and year
         // then gets all expenses (income) done by all kids with the specified date
         monthly_generate_all_button.setOnClickListener(e->{
+            listView.setAdapter(null);
             ArrayList<Expense> expenses = databaseHelper.getStatementsByMonth(
                     Integer.parseInt(monthly_spinner.getSelectedItem().toString()),
                     Integer.parseInt(yearly_spinner.getSelectedItem().toString())
