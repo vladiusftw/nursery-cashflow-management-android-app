@@ -11,6 +11,7 @@ import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.Classes.Kid;
 import com.example.csit242_project.FragmentClasses.EnrollFragment;
+import com.example.csit242_project.FragmentClasses.ExpenseFragment;
 import com.example.csit242_project.FragmentClasses.StatementFragment;
 import com.example.csit242_project.R;
 
@@ -26,31 +27,25 @@ public class MainActivity extends AppCompatActivity {
         ImageView money_button = findViewById(R.id.money_button);
         ImageView user_button = findViewById(R.id.user_button);
 
-        getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
-                new EnrollFragment(true),"enroll_fragment")
-                .addToBackStack("enroll_fragment").commit();
+        putFragment("enroll_fragment", new EnrollFragment(true));
         kids_button.setColorFilter(getResources().getColor(R.color.white));
 
         kids_button.setOnClickListener(e->{
-            Fragment fragment = getFragmentManager().findFragmentByTag("enroll_fragment");
-                if(fragment == null || !fragment.isVisible()){
-                    getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
-                            new EnrollFragment(true),"enroll_fragment")
-                            .addToBackStack("enroll_fragment").commit();
-                    clearColor(kids_button,file_button,money_button,user_button);
-                    kids_button.setColorFilter(getResources().getColor(R.color.white));
-                }
+            putFragment("enroll_fragment", new EnrollFragment(true));
+            clearColor(kids_button,file_button,money_button,user_button);
+            kids_button.setColorFilter(getResources().getColor(R.color.white));
         });
 
         file_button.setOnClickListener(e->{
-            Fragment fragment = getFragmentManager().findFragmentByTag("statement_fragment");
-            if(fragment == null || !fragment.isVisible()){
-                getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
-                        new StatementFragment(),"statement_fragment")
-                        .addToBackStack("statement_fragment").commit();
-                clearColor(kids_button,file_button,money_button,user_button);
-                file_button.setColorFilter(getResources().getColor(R.color.white));
-            }
+            putFragment("statement_fragment", new StatementFragment());
+            clearColor(kids_button,file_button,money_button,user_button);
+            file_button.setColorFilter(getResources().getColor(R.color.white));
+        });
+
+        money_button.setOnClickListener(e->{
+            putFragment("expense_fragment", new ExpenseFragment());
+            clearColor(kids_button,file_button,money_button,user_button);
+            money_button.setColorFilter(getResources().getColor(R.color.white));
         });
     }
 
@@ -59,5 +54,13 @@ public class MainActivity extends AppCompatActivity {
         img2.setColorFilter(null);
         img3.setColorFilter(null);
         img4.setColorFilter(null);
+    }
+
+    private void putFragment(String tag, Fragment f){
+        Fragment fragment = getFragmentManager().findFragmentByTag(tag);
+        if(fragment == null || !fragment.isVisible()){
+            getFragmentManager().beginTransaction().replace(R.id.main_mid_fragment,
+                    f,tag).addToBackStack(tag).commit();
+        }
     }
 }
