@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/search_bar_color"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/search_icon_end"/>
+
+    <EditText
+        android:id="@+id/table_list_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:hint="Search"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/search_icon"
+        app:layout_constraintEnd_toStartOf="@id/search_button"
+        android:singleLine="true"
+        android:maxLength="5"/>
+
+    <TextView
+        android:id="@+id/search_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/button_color"
+        android:gravity="center"
+        android:text="Search"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
+        app:layout_constraintTop_toBottomOf="@id/search_button_top"
+        app:layout_constraintEnd_toStartOf="@id/search_end"
+        app:layout_constraintStart_toEndOf="@id/table_list_id_end"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:background="@drawable/search_bar_color"
+        app:layout_constraintTop_toBottomOf="@id/row1_top"
+        app:layout_constraintBottom_toTopOf="@id/row1_bottom">
+
+        <TextView
+            android:id="@+id/column1_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="ID"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column2_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="PARENT"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column3_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="NAME"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+        <TextView
+            android:id="@+id/column4_id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="0.25"
+            android:text="CONTACT"
+            android:textColor="@color/black"
+            android:gravity="center"
+            />
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/kids_staff_list"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:divider="@drawable/divider"
+        app:layout_constraintTop_toBottomOf="@id/list_view_top"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_bar_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.05" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.995"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/table_list_id_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.003" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.048" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/row1_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.08" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/row1_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.12" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_view_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.14" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,407 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/toggle_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/kids_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:gravity="center"
+            android:text="KIDS"
+            android:textColor="@color/text"
+            android:textSize="32sp"/>
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/edit_admin_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.8"
+            android:gravity="center"
+            app:thumbTint="@color/button_color"
+            app:trackTint="@color/grey"/>
+
+        <TextView
+            android:id="@+id/staff_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:gravity="center"
+            android:text="STAFF"
+            android:textColor="@color/text"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/toggle"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@drawable/search_bar_color"
+        android:weightSum="1"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_top" />
+
+    <ImageView
+        android:id="@+id/search_icon"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:src="@drawable/search"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_top"
+        app:layout_constraintEnd_toStartOf="@id/search_icon_end"/>
+
+    <EditText
+        android:id="@+id/edit_admin_id_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/transparent"
+        android:hint="ID"
+        app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
+        app:layout_constraintTop_toBottomOf="@id/search_bar_top"
+        app:layout_constraintStart_toEndOf="@id/search_icon"
+        app:layout_constraintEnd_toStartOf="@id/edit_search"
+        android:singleLine="true"
+        android:inputType="number"/>
+
+    <TextView
+        android:id="@+id/edit_search"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/button_color"
+        android:gravity="center"
+        android:text="Search"
+        android:textColor="@color/text"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
+        app:layout_constraintTop_toBottomOf="@id/search_button_top"
+        app:layout_constraintEnd_toStartOf="@id/search_end"
+        app:layout_constraintStart_toEndOf="@id/edit_id_end"/>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="ID:"
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/list_top"
+        app:layout_constraintLeft_toLeftOf="@id/update_start"
+        app:layout_constraintRight_toRightOf="@+id/update_end"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar_bottom"/>
+
+    <TextView
+        android:id="@+id/edit_admin_id"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text=""
+        android:textSize="22sp"
+        android:gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/list_top"
+        app:layout_constraintLeft_toLeftOf="@id/delete_start"
+        app:layout_constraintRight_toRightOf="@+id/delete_end"
+        app:layout_constraintTop_toBottomOf="@+id/search_bar_bottom"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@id/list_top"
+        app:layout_constraintBottom_toTopOf="@id/list_bottom"
+        app:layout_constraintStart_toEndOf="@id/list_start"
+        app:layout_constraintEnd_toStartOf="@id/list_end"
+        android:background="@drawable/total_background"
+        android:weightSum="9"
+        android:showDividers="middle"
+        android:divider="@drawable/grey_divider">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="3"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/edit_admin_t1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Full Name:"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@color/text"/>
+
+            <EditText
+                android:id="@+id/edit_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bar_color"
+                android:layout_weight="0.5"
+                android:hint="Name"
+                android:gravity="center"
+                android:maxLength="15"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="3"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/edit_admin_t2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Parent Name:"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@color/text"/>
+
+            <EditText
+                android:id="@+id/edit_parent_name"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bar_color"
+                android:layout_weight="0.5"
+                android:hint="Parent Name"
+                android:gravity="center"
+                android:maxLength="15"/>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="3"
+            android:weightSum="1">
+
+            <TextView
+                android:id="@+id/edit_admin_t3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="0.5"
+                android:text="Contact:"
+                android:gravity="center"
+                android:textSize="22sp"
+                android:textColor="@color/text"/>
+
+            <EditText
+                android:id="@+id/edit_contact"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/search_bar_color"
+                android:layout_weight="0.5"
+                android:hint="Contact"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="10"/>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/update_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Update"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:background="@drawable/button_click_color"
+        app:layout_constraintStart_toEndOf="@id/update_start"
+        app:layout_constraintTop_toBottomOf="@id/buttons_top"
+        app:layout_constraintEnd_toStartOf="@id/update_end"
+        app:layout_constraintBottom_toTopOf="@id/buttons_bottom"/>
+
+    <TextView
+        android:id="@+id/delete_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="Delete"
+        android:textSize="22sp"
+        android:gravity="center"
+        android:background="@drawable/button_click_color"
+        app:layout_constraintStart_toEndOf="@id/delete_start"
+        app:layout_constraintTop_toBottomOf="@id/buttons_top"
+        app:layout_constraintEnd_toStartOf="@id/delete_end"
+        app:layout_constraintBottom_toTopOf="@id/buttons_bottom"/>
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_bar_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.11" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.02"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.995"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_icon_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/edit_id_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.75"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.067" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_button_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.108" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.18" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/list_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/search_bar_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.065" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttons_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.37"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/buttons_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.41"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/update_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/update_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.48"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/delete_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.52"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/delete_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.8"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="0dp"
+        app:layout_constraintGuide_percent="0.5"/>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

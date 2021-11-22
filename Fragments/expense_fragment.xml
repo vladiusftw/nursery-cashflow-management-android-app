@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.3"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.45"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/input_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/input_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detail_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/detail_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.37"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amount_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.38"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/amount_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.43"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.48" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.52" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/total_background"
+        android:radius="5dp"
+        app:layout_constraintLeft_toLeftOf="@+id/form_left"
+        app:layout_constraintRight_toRightOf="@+id/form_right"
+        app:layout_constraintTop_toTopOf="@+id/form_top"
+        app:layout_constraintBottom_toBottomOf="@+id/form_bottom"/>
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/detail_top"
+        app:layout_constraintBottom_toBottomOf="@+id/detail_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/input_left"
+        app:layout_constraintRight_toRightOf="@+id/input_right">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Detail"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:layout_weight="0.85" />
+
+        <EditText
+            android:id="@+id/detail_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Detail"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:layout_weight="0.5"
+            android:background="@drawable/search_bar_color"
+            android:maxLength="10"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="@+id/amount_top"
+        app:layout_constraintBottom_toBottomOf="@+id/amount_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/input_left"
+        app:layout_constraintRight_toRightOf="@+id/input_right">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="Amount"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:layout_weight="0.85" />
+
+        <EditText
+            android:id="@+id/amount_input"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:hint="Amount"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:layout_weight="0.5"
+            android:background="@drawable/search_bar_color"
+            android:inputType="numberDecimal"
+            android:maxLength="10"/>
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/add_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#87E0F6"
+        android:gravity="center"
+        android:text="Add"
+        android:textSize="22sp"
+        app:layout_constraintTop_toBottomOf="@id/add_top"
+        app:layout_constraintBottom_toTopOf="@id/add_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/add_left"
+        app:layout_constraintRight_toRightOf="@+id/add_right" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

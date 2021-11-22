@@ -1,0 +1,238 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:id="@+id/enrollment_fragment"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/toggle_linear_layout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:weightSum="9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/kids_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:gravity="center"
+            android:text="KIDS"
+            android:textColor="#6b6b6b"
+            android:textSize="32sp"/>
+
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/enrollment_admin_toggle"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="3.8"
+            android:gravity="center"
+            app:thumbTint="@color/button_color"
+            app:trackTint="@color/grey"/>
+
+        <TextView
+            android:id="@+id/staff_text"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2.6"
+            android:gravity="center"
+            android:text="STAFF"
+            android:textColor="#6b6b6b"
+            android:textSize="32sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/toggle"
+            app:layout_constraintTop_toTopOf="parent"/>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/details_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Details"
+        android:textColor="#6b6b6b"
+        app:layout_constraintTop_toBottomOf="@+id/toggle_linear_layout"
+        android:textSize="32sp"/>
+
+    <View
+        android:id="@+id/border"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        app:layout_constraintBottom_toBottomOf="@+id/form_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/form_left"
+        app:layout_constraintRight_toRightOf="@+id/form_right"
+        app:layout_constraintTop_toBottomOf="@+id/details_text"
+        android:radius="5dp"/>
+
+    <EditText
+        android:id="@+id/enrollment_admin_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Name"
+        android:textSize="25sp"
+        android:maxLength="15"
+        android:textColor="@color/text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/input_left"
+        app:layout_constraintRight_toRightOf="@+id/input_right"
+        app:layout_constraintTop_toTopOf="@+id/name_top"
+        app:layout_constraintBottom_toBottomOf="@+id/name_bottom"/>
+
+    <EditText
+        android:id="@+id/enrollment_admin_parent_name"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Parent Name"
+        android:textSize="25sp"
+        android:maxLength="15"
+        android:textColor="@color/text"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/input_left"
+        app:layout_constraintRight_toRightOf="@+id/input_right"
+        app:layout_constraintTop_toTopOf="@+id/pname_top"
+        app:layout_constraintBottom_toBottomOf="@+id/pname_bottom"/>
+
+    <EditText
+        android:id="@+id/enrollment_admin_contact"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="@color/white"
+        android:gravity="center"
+        android:hint="Contact"
+        android:textSize="25sp"
+        android:textColor="@color/text"
+        android:inputType="number"
+        android:maxLength="10"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="@+id/input_left"
+        app:layout_constraintRight_toRightOf="@+id/input_right"
+        app:layout_constraintTop_toTopOf="@+id/contact_top"
+        app:layout_constraintBottom_toBottomOf="@+id/contact_bottom"/>
+
+    <TextView
+        android:id="@+id/enrollment_admin_add_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/round_corner"
+        android:backgroundTint="#87E0F6"
+        android:gravity="center"
+        android:text="Add"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@id/add_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/add_left"
+        app:layout_constraintRight_toRightOf="@+id/add_right" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.34" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.05"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.95"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/input_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.9"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/input_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.1"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.13"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/name_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.18"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pname_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.2"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/pname_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.25"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contact_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.27" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/contact_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_bottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.6"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
