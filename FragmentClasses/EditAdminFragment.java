@@ -2,6 +2,8 @@ package com.example.csit242_project.FragmentClasses;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +35,9 @@ public class EditAdminFragment extends Fragment {
         EditText e1 = v.findViewById(R.id.edit_name);
         EditText e2 = v.findViewById(R.id.edit_parent_name);
         EditText e3 = v.findViewById(R.id.edit_contact);
+
+        FunctionsHelper.addTextWatcher(e1);
+        FunctionsHelper.addTextWatcher(e2);
 
         TextView search_button = v.findViewById(R.id.edit_search);
 

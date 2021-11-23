@@ -29,6 +29,9 @@ public class EditStaffFragment extends Fragment {
         EditText e2 = v.findViewById(R.id.edit_parent_name);
         EditText e3 = v.findViewById(R.id.edit_contact);
 
+        FunctionsHelper.addTextWatcher(e1);
+        FunctionsHelper.addTextWatcher(e2);
+
         TextView search_button = v.findViewById(R.id.edit_search);
 
         TextView update_button = v.findViewById(R.id.update_button);

@@ -26,6 +26,9 @@ public class EnrollmentStaffFragment extends Fragment {
         EditText e2 = v.findViewById(R.id.enrollment_admin_parent_name);
         EditText e3 = v.findViewById(R.id.enrollment_admin_contact);
 
+        FunctionsHelper.addTextWatcher(e1);
+        FunctionsHelper.addTextWatcher(e2);
+
         TextView add_button = v.findViewById(R.id.enrollment_admin_add_button);
 
         add_button.setOnClickListener(e->{
