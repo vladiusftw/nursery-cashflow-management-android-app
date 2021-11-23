@@ -2,12 +2,15 @@ package com.example.csit242_project.Classes;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.regex.Pattern;
 
 public class FunctionsHelper {
     public static void setHints(EditText e1, EditText e2, EditText e3, boolean isChecked){
@@ -138,6 +141,46 @@ public class FunctionsHelper {
 
     public static void showToast(Context c, String text){
         Toast.makeText(c,text,Toast.LENGTH_SHORT).show();
+    }
+
+    public static boolean hasLettersOnly(String text){
+        return Pattern.compile("[a-z]+|[A-Z]+").matcher(text).matches();
+    }
+
+    public static String removeOtherThanLetters(String text){
+        String temp = "";
+        for(int i = 0; i < text.length();i++){
+            if(hasLettersOnly(text.charAt(i)+"")) temp += text.charAt(i);
+        }
+        return temp;
+    }
+
+    public static void addTextWatcher(EditText editText){
+        editText.addTextChangedListener(new TextWatcher() {
+            boolean wasEdited = false;
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable editable) {
+                if(wasEdited){
+                    wasEdited = false;
+                    return;
+                }
+
+                String curr = editable.toString();
+                String newVal = FunctionsHelper.removeOtherThanLetters(curr);
+                wasEdited = true;
+                editable.replace(0,curr.length(),newVal);
+            }
+        });
     }
 
 
