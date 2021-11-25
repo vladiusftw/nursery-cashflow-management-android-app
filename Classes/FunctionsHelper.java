@@ -9,6 +9,7 @@ import android.widget.Toast;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.regex.Pattern;
 
@@ -181,6 +182,12 @@ public class FunctionsHelper {
                 editable.replace(0,curr.length(),newVal);
             }
         });
+    }
+
+    public static double getTotalAmount(ArrayList<Expense> expenses){
+        double amount = 0;
+        for(Expense e : expenses) amount += e.getAmount();
+        return amount;
     }
 
 
