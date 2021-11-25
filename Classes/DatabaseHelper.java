@@ -428,13 +428,15 @@ public class DatabaseHelper extends SQLiteOpenHelper {
             int detailIndex = cursor.getColumnIndex("detail");
             int amountIndex = cursor.getColumnIndex("amount");
             int dateIndex = cursor.getColumnIndex("date");
+            int kidIdIndex= cursor.getColumnIndex("kidId");
             while (cursor.moveToNext()) {
                 String stringDate = cursor.getString(dateIndex);
                 Date date = FunctionsHelper.getDate(stringDate);
                 if((date.after(date1) && date.before(date2)) || date.equals(date1) || date.equals(date2)){
                     String detail = cursor.getString(detailIndex);
                     double amount = cursor.getDouble(amountIndex);
-                    expenses.add(new Expense(detail,amount,stringDate));
+                    int kidId = cursor.getInt(kidIdIndex);
+                    expenses.add(new Expense(detail,amount,stringDate,kidId));
                 }
             }
             cursor.close();
