@@ -1,4 +1,4 @@
-package com.example.project.Adapters;
+package com.example.csit242_project.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.project.Classes.Staff;
-import com.example.project.R;
+import com.example.csit242_project.Classes.Staff;
+import com.example.csit242_project.R;
 
 import java.util.ArrayList;
 
 public class StaffsListAdapter extends ArrayAdapter<Staff> {
-    private Context c;
-    private ArrayList<Staff>staffs;
+    private final Context c;
+    private final ArrayList<Staff>staffs;
 
     public StaffsListAdapter(Context c, ArrayList<Staff> staffs){
         super(c,0,staffs);

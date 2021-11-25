@@ -1,4 +1,4 @@
-package com.example.project.Adapters;
+package com.example.csit242_project.Adapters;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,14 +7,14 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import com.example.project.Classes.Kid;
-import com.example.project.R;
+import com.example.csit242_project.Classes.Kid;
+import com.example.csit242_project.R;
 
 import java.util.ArrayList;
 
 public class KidsListAdapter extends ArrayAdapter<Kid> {
-    private Context c;
-    private ArrayList<Kid> kids;
+    private final Context c;
+    private final ArrayList<Kid> kids;
 
     public KidsListAdapter(Context c, ArrayList<Kid> kids){
         super(c,0,kids);
