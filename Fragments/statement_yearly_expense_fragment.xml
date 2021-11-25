@@ -40,62 +40,20 @@
 
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_top"
+        android:id="@+id/generate_all_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.07" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_bottom"
+        android:id="@+id/generate_all_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.11" />
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_left"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.37"/>
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_right"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.63"/>
-
-    <TextView
-        android:id="@+id/yearly_generate_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button_click_color"
-        android:text="Generate"
-        android:textSize="22sp"
-        android:autoSizeTextType="uniform"
-        tools:ignore="UnusedAttribute"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/generate_top"
-        app:layout_constraintLeft_toLeftOf="@+id/generate_left"
-        app:layout_constraintRight_toRightOf="@+id/generate_right"
-        app:layout_constraintBottom_toBottomOf="@+id/generate_bottom"/>
-
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_all_top"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.15" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_all_bottom"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.19" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/generate_all_left"
@@ -117,91 +75,38 @@
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"
         android:text="Generate All"
-        android:textSize="22sp"
+        android:textAlignment="center"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/generate_all_top"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/generate_all_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/generate_all_left"
         app:layout_constraintRight_toRightOf="@+id/generate_all_right"
-        app:layout_constraintBottom_toBottomOf="@+id/generate_all_bottom"/>
+        app:layout_constraintTop_toTopOf="@+id/generate_all_top" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/row1_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.2" />
+        app:layout_constraintGuide_percent="0.12" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/row1_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.24" />
+        app:layout_constraintGuide_percent="0.16" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/list_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.26" />
+        app:layout_constraintGuide_percent="0.18" />
 
     <LinearLayout
         android:id="@+id/generate_all_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:weightSum="1"
-        app:layout_constraintTop_toBottomOf="@id/row1_top"
-        app:layout_constraintBottom_toTopOf="@id/row1_bottom"
-        android:background="@drawable/search_bar_color"
-        android:visibility="invisible">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
-            android:text="DATE"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
-            android:text="DETAIL"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
-            android:text="AMOUNT"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="0.25"
-            android:text="KID ID"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/generate_linear_layout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:orientation="horizontal"

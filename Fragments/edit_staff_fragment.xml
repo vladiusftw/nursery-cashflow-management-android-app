@@ -12,6 +12,8 @@
         android:gravity="center"
         android:text="Kids"
         android:textColor="#6b6b6b"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textSize="32sp"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -106,6 +108,8 @@
         android:text="Search"
         android:textColor="#707070"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
         app:layout_constraintTop_toBottomOf="@id/search_button_top"
         app:layout_constraintEnd_toStartOf="@id/search_end"
@@ -122,6 +126,8 @@
         app:layout_constraintStart_toEndOf="@id/search_icon"
         app:layout_constraintEnd_toStartOf="@id/edit_search"
         android:singleLine="true"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:inputType="number"/>
 
     <!-- form section -->
@@ -164,6 +170,8 @@
         android:text="ID:"
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintBottom_toTopOf="@+id/list_top"
         app:layout_constraintLeft_toLeftOf="@id/update_start"
         app:layout_constraintRight_toRightOf="@+id/update_end"
@@ -176,6 +184,8 @@
         android:text=""
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintBottom_toTopOf="@+id/list_top"
         app:layout_constraintLeft_toLeftOf="@id/delete_start"
         app:layout_constraintRight_toRightOf="@+id/delete_end"
@@ -208,6 +218,8 @@
                 android:layout_weight="0.5"
                 android:text="Full Name:"
                 android:gravity="center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textSize="22sp"
                 android:textColor="#707070"/>
 
@@ -218,6 +230,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Name"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:maxLength="15"/>
 
@@ -238,6 +252,8 @@
                 android:layout_weight="0.5"
                 android:text="Parent Name:"
                 android:gravity="center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textSize="22sp"
                 android:textColor="#707070"/>
 
@@ -248,6 +264,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Parent Name"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:maxLength="15"/>
 
@@ -269,6 +287,8 @@
                 android:text="Contact:"
                 android:gravity="center"
                 android:textSize="22sp"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textColor="#707070"/>
 
             <EditText
@@ -280,6 +300,8 @@
                 android:hint="Contact"
                 android:gravity="center"
                 android:inputType="number"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:maxLength="10"/>
 
         </LinearLayout>
@@ -342,6 +364,8 @@
         android:text="Update"
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:background="@drawable/button_click_color"
         app:layout_constraintStart_toEndOf="@id/update_start"
         app:layout_constraintTop_toBottomOf="@id/buttons_top"
@@ -355,6 +379,8 @@
         android:text="Delete"
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:background="@drawable/button_click_color"
         app:layout_constraintStart_toEndOf="@id/delete_start"
         app:layout_constraintTop_toBottomOf="@id/buttons_top"

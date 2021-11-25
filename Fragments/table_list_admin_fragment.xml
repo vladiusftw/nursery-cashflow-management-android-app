@@ -23,7 +23,9 @@
             android:gravity="center"
             android:text="KIDS"
             android:textColor="@color/text"
-            android:textSize="32sp" />
+            android:textSize="32sp"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"/>
 
 
         <androidx.appcompat.widget.SwitchCompat
@@ -43,6 +45,8 @@
             android:layout_weight="2.6"
             android:gravity="center"
             android:text="STAFF"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textColor="@color/text"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -76,6 +80,8 @@
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:hint="ID"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
         app:layout_constraintTop_toBottomOf="@id/search_bar_top"
         app:layout_constraintStart_toEndOf="@id/search_icon"
@@ -92,6 +98,8 @@
         android:backgroundTint="@color/button_color"
         android:gravity="center"
         android:text="Search"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textColor="@color/text"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
@@ -118,6 +126,8 @@
             android:text="ID"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:id="@+id/column2_id"
@@ -127,6 +137,8 @@
             android:text="PARENT"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:id="@+id/column3_id"
@@ -136,6 +148,8 @@
             android:text="NAME"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:id="@+id/column4_id"
@@ -145,6 +159,8 @@
             android:text="CONTACT"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
     </LinearLayout>
 

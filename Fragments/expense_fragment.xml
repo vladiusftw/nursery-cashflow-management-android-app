@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/form_left"
@@ -128,6 +129,8 @@
             android:layout_height="match_parent"
             android:text="Detail"
             android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textAlignment="center"
             android:layout_weight="0.85" />
 
@@ -137,6 +140,8 @@
             android:layout_height="match_parent"
             android:hint="Detail"
             android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textAlignment="center"
             android:layout_weight="0.5"
             android:background="@drawable/search_bar_color"
@@ -158,6 +163,8 @@
             android:layout_height="match_parent"
             android:text="Amount"
             android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textAlignment="center"
             android:layout_weight="0.85" />
 
@@ -169,6 +176,8 @@
             android:textSize="22sp"
             android:textAlignment="center"
             android:layout_weight="0.5"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:background="@drawable/search_bar_color"
             android:inputType="numberDecimal"
             android:maxLength="10"/>
@@ -185,6 +194,8 @@
         android:gravity="center"
         android:text="Add"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintTop_toBottomOf="@id/add_top"
         app:layout_constraintBottom_toTopOf="@id/add_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/add_left"

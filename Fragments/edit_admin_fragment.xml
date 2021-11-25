@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
@@ -21,8 +22,10 @@
             android:layout_weight="2.6"
             android:gravity="center"
             android:text="KIDS"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textColor="@color/text"
-            android:textSize="32sp"/>
+            android:textSize="32sp" />
 
 
         <androidx.appcompat.widget.SwitchCompat
@@ -41,6 +44,8 @@
             android:layout_weight="2.6"
             android:gravity="center"
             android:text="STAFF"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textColor="@color/text"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -73,6 +78,8 @@
         android:layout_height="0dp"
         android:background="@android:color/transparent"
         android:hint="ID"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintBottom_toTopOf="@id/search_bar_bottom"
         app:layout_constraintTop_toBottomOf="@id/search_bar_top"
         app:layout_constraintStart_toEndOf="@id/search_icon"
@@ -88,6 +95,8 @@
         android:backgroundTint="@color/button_color"
         android:gravity="center"
         android:text="Search"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textColor="@color/text"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/search_button_bottom"
@@ -100,6 +109,8 @@
         android:layout_height="0dp"
         android:text="ID:"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/list_top"
         app:layout_constraintLeft_toLeftOf="@id/update_start"
@@ -112,6 +123,8 @@
         android:layout_height="0dp"
         android:text=""
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:gravity="center"
         app:layout_constraintBottom_toTopOf="@+id/list_top"
         app:layout_constraintLeft_toLeftOf="@id/delete_start"
@@ -146,6 +159,8 @@
                 android:layout_weight="0.5"
                 android:text="Full Name:"
                 android:gravity="center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textSize="22sp"
                 android:textColor="@color/text"/>
 
@@ -156,6 +171,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Name"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:maxLength="15"/>
 
@@ -175,6 +192,8 @@
                 android:layout_weight="0.5"
                 android:text="Parent Name:"
                 android:gravity="center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textSize="22sp"
                 android:textColor="@color/text"/>
 
@@ -185,6 +204,8 @@
                 android:background="@drawable/search_bar_color"
                 android:layout_weight="0.5"
                 android:hint="Parent Name"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:maxLength="15"/>
 
@@ -206,6 +227,8 @@
                 android:text="Contact:"
                 android:gravity="center"
                 android:textSize="22sp"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:textColor="@color/text"/>
 
             <EditText
@@ -216,6 +239,8 @@
                 android:layout_weight="0.5"
                 android:hint="Contact"
                 android:gravity="center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:inputType="number"
                 android:maxLength="10"/>
 
@@ -232,6 +257,8 @@
         android:text="Update"
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:background="@drawable/button_click_color"
         app:layout_constraintStart_toEndOf="@id/update_start"
         app:layout_constraintTop_toBottomOf="@id/buttons_top"
@@ -245,6 +272,8 @@
         android:text="Delete"
         android:textSize="22sp"
         android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:background="@drawable/button_click_color"
         app:layout_constraintStart_toEndOf="@id/delete_start"
         app:layout_constraintTop_toBottomOf="@id/buttons_top"

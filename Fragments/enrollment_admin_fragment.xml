@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:id="@+id/enrollment_fragment"
@@ -23,6 +24,8 @@
             android:layout_weight="2.6"
             android:gravity="center"
             android:text="KIDS"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textColor="#6b6b6b"
             android:textSize="32sp"/>
 
@@ -44,6 +47,8 @@
             android:gravity="center"
             android:text="STAFF"
             android:textColor="#6b6b6b"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textSize="32sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/toggle"
@@ -57,9 +62,27 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:text="Details"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textColor="#6b6b6b"
         app:layout_constraintTop_toBottomOf="@+id/toggle_linear_layout"
-        android:textSize="32sp"/>
+        app:layout_constraintBottom_toTopOf="@id/details_bottom"
+        android:textSize="32sp"
+        />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/details_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.11"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/form_top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.12"
+        android:orientation="horizontal"/>
 
     <View
         android:id="@+id/border"
@@ -69,7 +92,7 @@
         app:layout_constraintBottom_toBottomOf="@+id/form_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/form_left"
         app:layout_constraintRight_toRightOf="@+id/form_right"
-        app:layout_constraintTop_toBottomOf="@+id/details_text"
+        app:layout_constraintTop_toBottomOf="@+id/form_top"
         android:radius="5dp"/>
 
     <EditText
@@ -80,6 +103,8 @@
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:hint="Name"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textSize="25sp"
         android:maxLength="15"
         android:textColor="@color/text"
@@ -97,6 +122,8 @@
         android:backgroundTint="@color/white"
         android:gravity="center"
         android:hint="Parent Name"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textSize="25sp"
         android:maxLength="15"
         android:textColor="@color/text"
@@ -116,6 +143,8 @@
         android:hint="Contact"
         android:textSize="25sp"
         android:textColor="@color/text"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:inputType="number"
         android:maxLength="10"
         app:layout_constraintHorizontal_bias="0.0"
@@ -127,15 +156,19 @@
     <TextView
         android:id="@+id/enrollment_admin_add_button"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:background="@drawable/round_corner"
         android:backgroundTint="#87E0F6"
         android:gravity="center"
+        android:singleLine="true"
         android:text="Add"
+        android:autoSizeTextType="uniform"
         android:textSize="22sp"
         app:layout_constraintBottom_toTopOf="@id/add_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/add_left"
-        app:layout_constraintRight_toRightOf="@+id/add_right" />
+        app:layout_constraintRight_toRightOf="@+id/add_right"
+        app:layout_constraintTop_toBottomOf="@id/add_top"
+        tools:ignore="UnusedAttribute" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/form_bottom"
@@ -213,6 +246,13 @@
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.32" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/add_top"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.365" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/add_bottom"

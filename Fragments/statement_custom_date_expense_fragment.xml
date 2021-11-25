@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:tools="http://schemas.android.com/tools">
+    android:layout_height="match_parent">
 
     <TextView
         android:id="@+id/from_text"
@@ -11,25 +11,52 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="From:"
-        android:textSize="22sp"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
-        app:layout_constraintBottom_toTopOf="@+id/from_bottom"
-        app:layout_constraintEnd_toStartOf="@+id/yearly_dropdown"
-        app:layout_constraintHorizontal_bias="0.5"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/day_dropdown"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/from_bottom"/>
 
     <Spinner
-        android:id="@+id/yearly_dropdown"
+        android:id="@+id/day_dropdown"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/dropdown_shape"
         android:spinnerMode="dropdown"
-        app:layout_constraintBottom_toTopOf="@+id/from_bottom"
-        app:layout_constraintStart_toEndOf="@id/from_text"
+        app:layout_constraintBottom_toBottomOf="@+id/from_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/month_dropdown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/from_text"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/month_dropdown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dropdown_shape"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/from_bottom"
+        app:layout_constraintEnd_toStartOf="@+id/year_dropdown"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/day_dropdown"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
+
+    <Spinner
+        android:id="@+id/year_dropdown"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dropdown_shape"
+        android:spinnerMode="dropdown"
+        app:layout_constraintBottom_toBottomOf="@+id/from_bottom"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/month_dropdown"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="SpeakableTextPresentCheck" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/from_bottom"
@@ -38,50 +65,67 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.05" />
 
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_top"
+        android:id="@+id/to_top"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.07" />
 
+    <TextView
+        android:id="@+id/to_text"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:text="To:"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toStartOf="@+id/day_dropdown2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/to_top"
+        app:layout_constraintBottom_toTopOf="@id/to_bottom"/>
+
+    <Spinner
+        android:id="@+id/day_dropdown2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dropdown_shape"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toTopOf="@+id/to_top"
+        app:layout_constraintBottom_toBottomOf="@+id/to_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/day_dropdown"
+        app:layout_constraintRight_toRightOf="@+id/day_dropdown"/>
+
+    <Spinner
+        android:id="@+id/month_dropdown2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dropdown_shape"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toTopOf="@+id/to_top"
+        app:layout_constraintBottom_toBottomOf="@+id/to_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/month_dropdown"
+        app:layout_constraintRight_toRightOf="@+id/month_dropdown"/>
+
+    <Spinner
+        android:id="@+id/year_dropdown2"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/dropdown_shape"
+        android:spinnerMode="dropdown"
+        app:layout_constraintTop_toTopOf="@+id/to_top"
+        app:layout_constraintBottom_toBottomOf="@+id/to_bottom"
+        app:layout_constraintLeft_toLeftOf="@+id/year_dropdown"
+        app:layout_constraintRight_toRightOf="@+id/year_dropdown"/>
+
+
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_bottom"
+        android:id="@+id/to_bottom"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="horizontal"
-        app:layout_constraintGuide_percent="0.11" />
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_left"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.37"/>
-
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_right"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.63"/>
-
-    <TextView
-        android:id="@+id/yearly_generate_button"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:background="@drawable/button_click_color"
-        android:text="Generate"
-        android:textSize="22sp"
-        android:autoSizeTextType="uniform"
-        tools:ignore="UnusedAttribute"
-        android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/generate_top"
-        app:layout_constraintLeft_toLeftOf="@+id/generate_left"
-        app:layout_constraintRight_toRightOf="@+id/generate_right"
-        app:layout_constraintBottom_toBottomOf="@+id/generate_bottom"/>
-
+        app:layout_constraintGuide_percent="0.12" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/generate_all_top"
@@ -98,33 +142,35 @@
         app:layout_constraintGuide_percent="0.19" />
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_all_left"
+        android:id="@+id/generate_left"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.32"/>
+        app:layout_constraintGuide_percent="0.37"/>
 
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/generate_all_right"
+        android:id="@+id/generate_right"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.68"/>
+        app:layout_constraintGuide_percent="0.63"/>
 
     <TextView
-        android:id="@+id/yearly_generate_all_button"
+        android:id="@+id/custom_generate_all_button"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:background="@drawable/button_click_color"
-        android:text="Generate All"
-        android:textSize="22sp"
+        android:ellipsize="none"
+        android:singleLine="true"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
+        android:text="Generate All"
         android:textAlignment="center"
-        app:layout_constraintTop_toBottomOf="@id/generate_all_top"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toTopOf="@+id/generate_all_bottom"
         app:layout_constraintLeft_toLeftOf="@+id/generate_all_left"
         app:layout_constraintRight_toRightOf="@+id/generate_all_right"
-        app:layout_constraintBottom_toBottomOf="@+id/generate_all_bottom"/>
+        app:layout_constraintTop_toTopOf="@+id/generate_all_top" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/row1_top"
@@ -147,6 +193,20 @@
         android:orientation="horizontal"
         app:layout_constraintGuide_percent="0.26" />
 
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_left"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.32"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/generate_all_right"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.68"/>
+
     <LinearLayout
         android:id="@+id/generate_all_linear_layout"
         android:layout_width="match_parent"
@@ -155,8 +215,7 @@
         android:weightSum="1"
         app:layout_constraintTop_toBottomOf="@id/row1_top"
         app:layout_constraintBottom_toTopOf="@id/row1_bottom"
-        android:background="@drawable/search_bar_color"
-        android:visibility="invisible">
+        android:background="@drawable/search_bar_color">
 
         <TextView
             android:layout_width="match_parent"
@@ -200,51 +259,8 @@
             />
     </LinearLayout>
 
-    <LinearLayout
-        android:id="@+id/generate_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:orientation="horizontal"
-        android:weightSum="3"
-        app:layout_constraintTop_toBottomOf="@id/row1_top"
-        app:layout_constraintBottom_toTopOf="@id/row1_bottom"
-        android:background="@drawable/search_bar_color"
-        android:visibility="visible">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="DATE"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="DETAIL"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:text="AMOUNT"
-            android:textColor="@color/black"
-            android:gravity="center"
-            android:autoSizeTextType="uniform"
-            tools:ignore="UnusedAttribute"
-            />
-    </LinearLayout>
-
     <ListView
-        android:id="@+id/yearly_list"
+        android:id="@+id/custom_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
         android:divider="@drawable/divider"
@@ -252,5 +268,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

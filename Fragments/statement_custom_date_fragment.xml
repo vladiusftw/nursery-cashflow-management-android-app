@@ -11,6 +11,8 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="From:"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/day_dropdown"
         app:layout_constraintStart_toStartOf="parent"
@@ -76,6 +78,8 @@
         android:layout_height="0dp"
         android:gravity="center"
         android:text="To:"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textSize="22sp"
         app:layout_constraintEnd_toStartOf="@+id/day_dropdown2"
         app:layout_constraintStart_toStartOf="parent"
@@ -158,6 +162,8 @@
         android:background="@drawable/button_click_color"
         android:text="Generate"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textAlignment="center"
         app:layout_constraintTop_toBottomOf="@id/generate_top"
         app:layout_constraintLeft_toLeftOf="@+id/generate_left"
@@ -172,6 +178,8 @@
         android:text="Generate All"
         android:textSize="22sp"
         android:textAlignment="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:singleLine="true"
         android:ellipsize="none"
         app:layout_constraintTop_toBottomOf="@id/generate_all_button_top"
@@ -246,6 +254,8 @@
             android:text="DATE"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:layout_width="match_parent"
@@ -254,6 +264,8 @@
             android:text="DETAIL"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:layout_width="match_parent"
@@ -262,6 +274,8 @@
             android:text="AMOUNT"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:layout_width="match_parent"
@@ -270,6 +284,8 @@
             android:text="KID ID"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
     </LinearLayout>
 
@@ -291,6 +307,8 @@
             android:text="DATE"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:layout_width="match_parent"
@@ -299,6 +317,8 @@
             android:text="DETAIL"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
         <TextView
             android:layout_width="match_parent"
@@ -307,6 +327,8 @@
             android:text="AMOUNT"
             android:textColor="@color/black"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             />
     </LinearLayout>
 
@@ -314,6 +336,7 @@
         android:id="@+id/custom_list"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:divider="@drawable/divider"
         app:layout_constraintTop_toTopOf="@+id/list_top"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"

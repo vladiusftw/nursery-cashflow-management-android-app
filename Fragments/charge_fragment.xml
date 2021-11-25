@@ -11,6 +11,8 @@
         android:textSize="32sp"
         android:text="Rates"
         android:textColor="@color/text"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:gravity="top"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,6 +33,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:text="Less than 4 Hours"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textColor="@color/text"
             android:textSize="22sp"
             android:layout_weight="0.5"
@@ -44,6 +48,8 @@
             android:background="@drawable/search_bar_color"
             android:layout_weight="0.5"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:inputType="number"
             android:maxLength="2"
             android:singleLine="true"/>
@@ -65,6 +71,8 @@
             android:layout_height="match_parent"
             android:text="4 Hours"
             android:textColor="@color/text"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:textSize="22sp"
             android:layout_weight="0.5"
             android:gravity="start|center"/>
@@ -78,6 +86,8 @@
             android:layout_weight="0.5"
             android:gravity="center"
             android:inputType="number"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:maxLength="2"
             android:singleLine="true"/>
 
@@ -99,6 +109,8 @@
             android:text="More than 4 Hours"
             android:textColor="@color/text"
             android:textSize="22sp"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:layout_weight="0.5"
             android:gravity="start|center"/>
 
@@ -110,6 +122,8 @@
             android:background="@drawable/search_bar_color"
             android:layout_weight="0.5"
             android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:inputType="number"
             android:maxLength="2"
             android:singleLine="true"
@@ -122,6 +136,8 @@
         android:layout_height="0dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintTop_toBottomOf="@id/charge_text_top"
         app:layout_constraintBottom_toTopOf="@+id/charge_top"
         android:text="Charge"
@@ -144,6 +160,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:hint="ID"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:background="@drawable/search_bar_color"
             android:layout_weight="0.3"
             android:gravity="center"
@@ -160,6 +178,8 @@
             android:layout_weight="0.7"
             android:gravity="center"
             android:inputType="number"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
             android:maxLength="2"
             android:singleLine="true"/>
 
@@ -174,6 +194,8 @@
         android:text="Calculate"
         android:textColor="@color/text"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         app:layout_constraintTop_toBottomOf="@id/calc_top"
         app:layout_constraintBottom_toTopOf="@id/calc_bottom"
         app:layout_constraintStart_toEndOf="@id/calc_start"
@@ -205,6 +227,8 @@
                 android:text="Subtotal:"
                 android:textSize="22sp"
                 android:layout_weight="0.5"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="start|center"/>
 
             <TextView
@@ -213,6 +237,8 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:gravity="start|center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:layout_weight="0.5"/>
 
         </LinearLayout>
@@ -230,6 +256,8 @@
                 android:layout_height="match_parent"
                 android:text="Discount:"
                 android:singleLine="true"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:ellipsize="none"
                 android:gravity="start|center"
                 android:textSize="22sp"
@@ -241,6 +269,8 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:layout_weight="3"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:background="@drawable/search_bar_color"
                 android:inputType="number"
@@ -253,6 +283,8 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:text="Apply"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="center"
                 android:background="@drawable/button_click_color"
                 android:layout_weight="3"/>
@@ -272,6 +304,8 @@
                 android:layout_height="match_parent"
                 android:text="Total Price:"
                 android:textSize="22sp"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:gravity="start|center"
                 android:layout_weight="0.5"/>
 
@@ -281,6 +315,8 @@
                 android:layout_height="match_parent"
                 android:textSize="22sp"
                 android:gravity="start|center"
+                android:autoSizeTextType="uniform"
+                tools:ignore="UnusedAttribute"
                 android:layout_weight="0.5"/>
 
         </LinearLayout>
@@ -294,6 +330,8 @@
         android:text="Add"
         android:gravity="center"
         android:textSize="22sp"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:background="@drawable/button_click_color"
         app:layout_constraintTop_toBottomOf="@id/add_top"
         app:layout_constraintStart_toEndOf="@id/add_start"
