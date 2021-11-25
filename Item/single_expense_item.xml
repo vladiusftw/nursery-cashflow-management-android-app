@@ -1,32 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:weightSum="3">
+    android:weightSum="3"
+    android:background="@drawable/round_corner">
 
-    <TextView
-        android:id="@+id/expense_date_id"
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+        android:fillViewport="true">
 
-    <TextView
-        android:id="@+id/expense_detail_id"
+        <TextView
+            android:id="@+id/expense_date_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
+            android:singleLine="true"
+            android:scrollHorizontally="true"/>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:textColor="@color/black"
-        android:gravity="center"/>
+        android:layout_gravity="center"
+        android:fillViewport="true">
 
+        <TextView
+            android:id="@+id/expense_detail_id"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:textColor="@color/black"
+            android:gravity="center"
+            android:autoSizeTextType="uniform"
+            tools:ignore="UnusedAttribute"
+            android:singleLine="true"
+            android:scrollHorizontally="true"/>
+
+    </HorizontalScrollView>
+
+    <HorizontalScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:fillViewport="true">
     <TextView
         android:id="@+id/expense_amount_id"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:layout_weight="1"
         android:textColor="@color/black"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
+        android:singleLine="true"
+        android:scrollHorizontally="true"/>
+    </HorizontalScrollView>
 
 </LinearLayout>
