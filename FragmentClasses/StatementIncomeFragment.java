@@ -37,16 +37,16 @@ public class StatementIncomeFragment extends Fragment {
                     String s = parent.getItemAtPosition(position).toString();
                     switch (s){
                         case "MONTHLY" :
-                            putChildFragment("monthly_income_fragment",new MonthlyIncomeFragment());
+                            putChildFragment("monthly_income_fragment",new MonthlyIncomeFragment(input_id));
                         break;
 
                         case "YEARLY" :
-                            putChildFragment("yearly_income_fragment",new YearlyIncomeFragment());
+                            putChildFragment("yearly_income_fragment",new YearlyIncomeFragment(input_id));
 
                         break;
 
                         case "CUSTOM" :
-                            putChildFragment("custom_income_fragment",new CustomIncomeFragment());
+                            putChildFragment("custom_income_fragment",new CustomIncomeFragment(input_id));
                         break;
                     }
             }

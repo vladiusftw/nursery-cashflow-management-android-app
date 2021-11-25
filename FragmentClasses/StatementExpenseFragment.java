@@ -26,33 +26,15 @@ public class StatementExpenseFragment extends Fragment {
                 String selected = parent.getItemAtPosition(position).toString();
                 switch (selected){
                     case "MONTHLY" : {
-                        Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_monthly_fragment");
-                        if(fragment == null || !fragment.isVisible()){
-                            getChildFragmentManager().beginTransaction()
-                                    .replace(R.id.income_mid_container,new MonthlyExpenseProfitFragment(),
-                                            "statement_monthly_fragment")
-                                    .addToBackStack("statement_monthly_fragment").commit();
-                        }
+                        putChildFragment("statement_monthly_fragment",new MonthlyExpenseProfitFragment());
                     }break;
 
                     case "YEARLY" : {
-                        Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_yearly_fragment");
-                        /*if(fragment == null || !fragment.isVisible()){
-                            getChildFragmentManager().beginTransaction()
-                                    .replace(R.id.income_mid_container,new YearlyExpenseProfitFragment(),
-                                            "statement_yearly_fragment")
-                                    .addToBackStack("statement_yearly_fragment").commit();
-                        }*/
+                        putChildFragment("statement_yearly_fragment",new YearlyExpenseProfitFragment());
                     }break;
 
                     case "CUSTOM" : {
-                        Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_custom_fragment");
-                       /* if(fragment == null || !fragment.isVisible()){
-                            getChildFragmentManager().beginTransaction()
-                                    .replace(R.id.income_mid_container,new CustomExpenseProfitFragment(),
-                                            "statement_custom_fragment")
-                                    .addToBackStack("statement_custom_fragment").commit();
-                        }*/
+                        //putChildFragment("statement_custom_fragment",new CustomExpenseProfitFragment());
                     }break;
                 }
             }
@@ -63,5 +45,12 @@ public class StatementExpenseFragment extends Fragment {
             }
         });
         return v;
+    }
+
+    private void putChildFragment(String tag, Fragment f){
+        Fragment fragment = getChildFragmentManager().findFragmentByTag(tag);
+        if(fragment == null || !fragment.isVisible())
+            getChildFragmentManager().beginTransaction().replace(R.id.expense_profit_mid_container,
+                    f,tag).addToBackStack(tag).commit();
     }
 }

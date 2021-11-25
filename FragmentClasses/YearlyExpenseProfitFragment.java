@@ -1,12 +1,13 @@
 package com.example.csit242_project.FragmentClasses;
 
+import android.annotation.SuppressLint;
 import android.app.Fragment;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
-import android.widget.LinearLayout;
+import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -20,33 +21,38 @@ import com.example.csit242_project.R;
 
 import java.util.ArrayList;
 
-public class MonthlyExpenseProfitFragment extends Fragment {
+public class YearlyExpenseProfitFragment extends Fragment {
+    EditText input_id;
+
+    public YearlyExpenseProfitFragment(){
+
+    }
+
+    @SuppressLint("ValidFragment")
+    public YearlyExpenseProfitFragment(EditText input_id){
+        this.input_id = input_id;
+    }
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View v = inflater.inflate(R.layout.statement_monthly_expense_profit_fragment,container,false);
-
-        ListView listView = v.findViewById(R.id.monthly_list);
+        View v = inflater.inflate(R.layout.statement_yearly_expense_profit_fragment,container,false);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
 
-        Spinner monthly_spinner = v.findViewById(R.id.month_dropdown);
-        Spinner yearly_spinner = v.findViewById(R.id.year_dropdown);
+        ListView listView = v.findViewById(R.id.yearly_list);
 
-        monthly_spinner.setAdapter(new ArrayAdapter<>(getActivity(),R.layout.single_dropdown_item, FunctionsHelper.months()));
+        Spinner yearly_spinner = v.findViewById(R.id.yearly_dropdown);
         yearly_spinner.setAdapter(new ArrayAdapter<>(getActivity(),R.layout.single_dropdown_item, FunctionsHelper.years()));
 
-        TextView monthly_generate_all_button = v.findViewById(R.id.monthly_generate_all_button);
+        TextView generate_all_button = v.findViewById(R.id.yearly_generate_all_button);
 
-        // gets the given month and year
+        // gets the given year
         // then gets all expenses (income) done by all kids with the specified date
-        monthly_generate_all_button.setOnClickListener(e->{
-            listView.setAdapter(null);
-            ArrayList<Expense> expenses = databaseHelper.getNurseryExpensesByMonth(
-                    Integer.parseInt(monthly_spinner.getSelectedItem().toString()),
+        generate_all_button.setOnClickListener(e->{
+            ArrayList<Expense> expenses = databaseHelper.getNurseryExpensesByYear(
                     Integer.parseInt(yearly_spinner.getSelectedItem().toString())
             );
             if(expenses.size() != 0){
-                listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Expenses Generated From Given Date");

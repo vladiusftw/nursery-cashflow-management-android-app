@@ -14,6 +14,7 @@ import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
+import com.example.csit242_project.Adapters.ExpensesListAdapter;
 import com.example.csit242_project.Adapters.ExpensesNoIDListAdapter;
 import com.example.csit242_project.Classes.DatabaseHelper;
 import com.example.csit242_project.Classes.Expense;
@@ -159,6 +160,8 @@ public class CustomIncomeFragment extends Fragment {
                         );
                         if(expenses.size() != 0){
                             listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                            generate_layout.setVisibility(View.VISIBLE);
+                            generate_all_layout.setVisibility(View.INVISIBLE);
                         }
                         else{
                             FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
@@ -194,7 +197,9 @@ public class CustomIncomeFragment extends Fragment {
                     if(to.after(from) || from.equals(to)){
                         ArrayList<Expense> expenses = databaseHelper.getStatementsByCustom(from,to);
                         if(expenses.size() != 0){
-                            listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                            listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                            generate_all_layout.setVisibility(View.VISIBLE);
+                            generate_layout.setVisibility(View.INVISIBLE);
                         }
                         else{
                             FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");

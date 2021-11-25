@@ -20,23 +20,13 @@ public class StatementFragment extends Fragment {
 
 
         income_button.setOnClickListener(e->{
-            Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_income_fragment");
-            if(fragment==null || !fragment.isVisible()){
-                getChildFragmentManager().beginTransaction().replace(R.id.statement_mid_container
-                ,new StatementIncomeFragment(),"statement_income_fragment").
-                        addToBackStack("statement_income_fragment").commit();
-            }
+            putChildFragment("statement_income_fragment",new StatementIncomeFragment());
         });
 
 
-       /* expense_button.setOnClickListener(e->{
-            Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_expense_fragment");
-            if(fragment==null || !fragment.isVisible()){
-                getChildFragmentManager().beginTransaction().replace(R.id.statement_mid_container
-                        ,new ExpenseFragment(),"statement_expense_fragment").
-                        addToBackStack("statement_expense_fragment").commit();
-            }
-        });*/
+        expense_button.setOnClickListener(e->{
+            putChildFragment("statement_expense_fragment",new StatementExpenseFragment());
+        });
 
 
        /* profit_button.setOnClickListener(e->{
@@ -49,4 +39,12 @@ public class StatementFragment extends Fragment {
         });*/
         return v;
     }
+
+    private void putChildFragment(String tag, Fragment f){
+        Fragment fragment = getChildFragmentManager().findFragmentByTag(tag);
+        if(fragment == null || !fragment.isVisible())
+            getChildFragmentManager().beginTransaction().replace(R.id.statement_mid_container,
+                    f,tag).addToBackStack(tag).commit();
+    }
+
 }
