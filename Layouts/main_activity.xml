@@ -11,6 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ADMIN"
+        android:autoSizeTextType="uniform"
+        tools:ignore="UnusedAttribute"
         android:textColor="@color/white"
         android:textSize="40sp"
         app:layout_constraintBottom_toTopOf="@id/guideline6"
@@ -21,12 +23,11 @@
     <RelativeLayout
         android:id="@+id/main_mid_fragment"
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         app:layout_constraintBottom_toTopOf="@id/guideline8"
         app:layout_constraintEnd_toEndOf="@id/mid_end"
         app:layout_constraintStart_toStartOf="@id/mid_start"
-        app:layout_constraintTop_toBottomOf="@id/guideline7"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/guideline7"/>
 
 
     <LinearLayout
@@ -97,7 +98,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.88" />
+        app:layout_constraintGuide_percent="0.89" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline6"
@@ -113,7 +114,7 @@
         android:layout_height="wrap_content"
         android:orientation="horizontal"
         app:layout_constraintGuide_begin="0dp"
-        app:layout_constraintGuide_percent="0.12" />
+        app:layout_constraintGuide_percent="0.11" />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/mid_start"
