@@ -34,7 +34,7 @@ public class ExpenseFragment extends Fragment {
 
         add_button.setOnClickListener(e->{
             if(FunctionsHelper.isNotEmpty(detail_input,amount_input)){
-                String detail = FunctionsHelper.removeWhiteSpace(detail_input + "");
+                String detail = FunctionsHelper.removeWhiteSpace(detail_input.getText() + "");
                 double amount = Double.parseDouble(amount_input.getText()+"");
                 String date = FunctionsHelper.getStringCurrentDate();
                 Expense expense = new Expense(detail,amount,date);

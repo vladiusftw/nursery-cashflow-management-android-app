@@ -12,7 +12,7 @@ import android.widget.Spinner;
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.R;
 
-public class StatementExpenseFragment extends Fragment {
+public class StatementProfitFragment extends Fragment {
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.statement_expense_profit_fragment,container,false);
@@ -26,15 +26,15 @@ public class StatementExpenseFragment extends Fragment {
                 String selected = parent.getItemAtPosition(position).toString();
                 switch (selected){
                     case "MONTHLY" : {
-                        putChildFragment("statement_monthly_fragment",new MonthlyExpenseFragment());
+                        /*putChildFragment("statement_monthly_fragment",new MonthlyExpenseFragment());*/
                     }break;
 
                     case "YEARLY" : {
-                        putChildFragment("statement_yearly_fragment",new YearlyExpenseFragment());
+                        putChildFragment("statement_yearly_fragment",new YearlyProfitFragment());
                     }break;
 
                     case "CUSTOM" : {
-                        putChildFragment("statement_custom_fragment",new CustomExpenseFragment());
+                       /* putChildFragment("statement_custom_fragment",new CustomExpenseFragment());*/
                     }break;
                 }
             }

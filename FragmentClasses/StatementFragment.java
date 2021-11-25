@@ -29,14 +29,9 @@ public class StatementFragment extends Fragment {
         });
 
 
-       /* profit_button.setOnClickListener(e->{
-            Fragment fragment = getChildFragmentManager().findFragmentByTag("statement_profit_fragment");
-            if(fragment==null || !fragment.isVisible()){
-                getChildFragmentManager().beginTransaction().replace(R.id.statement_mid_container
-                        ,new ProfitFragment(),"statement_profit_fragment").
-                        addToBackStack("statement_profit_fragment").commit();
-            }
-        });*/
+        profit_button.setOnClickListener(e->{
+            putChildFragment("statement_profit_fragment",new StatementProfitFragment());
+        });
         return v;
     }
 
