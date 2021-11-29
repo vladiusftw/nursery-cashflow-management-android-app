@@ -2,8 +2,7 @@ package com.example.csit242_project.FragmentClasses;
 
 import android.app.Fragment;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -36,8 +35,9 @@ public class EditAdminFragment extends Fragment {
         EditText e2 = v.findViewById(R.id.edit_parent_name);
         EditText e3 = v.findViewById(R.id.edit_contact);
 
-        FunctionsHelper.addTextWatcher(e1);
-        FunctionsHelper.addTextWatcher(e2);
+        e1.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+        e2.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+        e3.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
 
         TextView search_button = v.findViewById(R.id.edit_search);
 
@@ -116,11 +116,17 @@ public class EditAdminFragment extends Fragment {
                 t1.setText("Username:");
                 t2.setText("Password:");
                 t3.setText("Level:");
+                e1.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+                e2.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+                e3.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
             }
             else{
                 t1.setText("Full Name:");
                 t2.setText("Parent Name:");
                 t3.setText("Contact:");
+                e1.setFilters(new InputFilter[]{FunctionsHelper.getNoSpaceInputFilter(),new InputFilter.LengthFilter(15)});
+                e2.setFilters(new InputFilter[]{FunctionsHelper.getNoSpaceInputFilter(),new InputFilter.LengthFilter(15)});
+                e3.setFilters(new InputFilter[]{FunctionsHelper.getStaffInputFilter(),new InputFilter.LengthFilter(1)});
             }
             id_edit.setText("");
         });

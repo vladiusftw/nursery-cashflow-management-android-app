@@ -7,11 +7,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.csit242_project.Adapters.ExpensesListAdapter;
+import com.example.csit242_project.Adapters.ExpensesNoIDListAdapter;
 import com.example.csit242_project.Classes.DatabaseHelper;
 import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
@@ -31,6 +33,8 @@ public class CustomExpenseFragment extends Fragment {
         View v = inflater.inflate(R.layout.statement_custom_date_expense_fragment,container,false);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
+
+        LinearLayout generate_linear_layout = v.findViewById(R.id.generate_all_linear_layout);
 
         ListView listView = v.findViewById(R.id.custom_list);
 
@@ -125,6 +129,7 @@ public class CustomExpenseFragment extends Fragment {
         });
 
         generate_all_button.setOnClickListener(e->{
+            generate_linear_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             String day1 = from_day_spinner.getSelectedItem().toString();
             String month1 = from_month_spinner.getSelectedItem().toString();
@@ -140,7 +145,8 @@ public class CustomExpenseFragment extends Fragment {
                     if(to.after(from) || from.equals(to)){
                         ArrayList<Expense> expenses = databaseHelper.getNurseryExpensesByCustom(from,to);
                         if(expenses.size() != 0){
-                            listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                            listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                            generate_linear_layout.setVisibility(View.VISIBLE);
                         }
                         else{
                             FunctionsHelper.showToast(getActivity(),"No Expenses Generated From Given Date");

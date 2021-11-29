@@ -26,7 +26,7 @@ public class StatementProfitFragment extends Fragment {
                 String selected = parent.getItemAtPosition(position).toString();
                 switch (selected){
                     case "MONTHLY" : {
-                        /*putChildFragment("statement_monthly_fragment",new MonthlyExpenseFragment());*/
+                        putChildFragment("statement_monthly_fragment",new MonthlyProfitFragment());
                     }break;
 
                     case "YEARLY" : {
@@ -34,7 +34,7 @@ public class StatementProfitFragment extends Fragment {
                     }break;
 
                     case "CUSTOM" : {
-                       /* putChildFragment("statement_custom_fragment",new CustomExpenseFragment());*/
+                        putChildFragment("statement_custom_fragment",new CustomProfitFragment());
                     }break;
                 }
             }

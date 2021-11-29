@@ -140,6 +140,8 @@ public class CustomIncomeFragment extends Fragment {
         });
 
         generate_button.setOnClickListener(e->{
+            generate_all_layout.setVisibility(View.INVISIBLE);
+            generate_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             String day1 = from_day_spinner.getSelectedItem().toString();
             String month1 = from_month_spinner.getSelectedItem().toString();
@@ -161,7 +163,6 @@ public class CustomIncomeFragment extends Fragment {
                         if(expenses.size() != 0){
                             listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
                             generate_layout.setVisibility(View.VISIBLE);
-                            generate_all_layout.setVisibility(View.INVISIBLE);
                         }
                         else{
                             FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
@@ -182,6 +183,8 @@ public class CustomIncomeFragment extends Fragment {
 
 
         generate_all_button.setOnClickListener(e->{
+            generate_all_layout.setVisibility(View.INVISIBLE);
+            generate_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             String day1 = from_day_spinner.getSelectedItem().toString();
             String month1 = from_month_spinner.getSelectedItem().toString();
@@ -199,7 +202,6 @@ public class CustomIncomeFragment extends Fragment {
                         if(expenses.size() != 0){
                             listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
                             generate_all_layout.setVisibility(View.VISIBLE);
-                            generate_layout.setVisibility(View.INVISIBLE);
                         }
                         else{
                             FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");

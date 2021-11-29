@@ -53,6 +53,8 @@ public class YearlyIncomeFragment extends Fragment {
         // gets the given ID and given year
         // then gets all expenses (income) done by this specific kid with the specified date
         generate_button.setOnClickListener(e->{
+            generate_all_layout.setVisibility(View.INVISIBLE);
+            generate_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             String input_text = input_id.getText()+"";
             if(input_text.length() != 0){
@@ -61,7 +63,6 @@ public class YearlyIncomeFragment extends Fragment {
                 if(expenses.size() != 0){
                     listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
                     generate_layout.setVisibility(View.VISIBLE);
-                    generate_all_layout.setVisibility(View.INVISIBLE);
                 }else{
                     FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
                             + input_text + " From Given Date");
@@ -75,6 +76,8 @@ public class YearlyIncomeFragment extends Fragment {
         // gets the given year
         // then gets all expenses (income) done by all kids with the specified date
         generate_all_button.setOnClickListener(e->{
+            generate_all_layout.setVisibility(View.INVISIBLE);
+            generate_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             ArrayList<Expense> expenses = databaseHelper.getStatementsByYear(
                     Integer.parseInt(yearly_spinner.getSelectedItem().toString())
@@ -82,7 +85,6 @@ public class YearlyIncomeFragment extends Fragment {
             if(expenses.size() != 0){
                 listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
                 generate_all_layout.setVisibility(View.VISIBLE);
-                generate_layout.setVisibility(View.INVISIBLE);
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");

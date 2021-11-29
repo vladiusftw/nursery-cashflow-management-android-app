@@ -2,6 +2,7 @@ package com.example.csit242_project.FragmentClasses;
 
 import android.app.Fragment;
 import android.os.Bundle;
+import android.text.InputFilter;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -26,8 +27,9 @@ public class EnrollmentStaffFragment extends Fragment {
         EditText e2 = v.findViewById(R.id.enrollment_admin_parent_name);
         EditText e3 = v.findViewById(R.id.enrollment_admin_contact);
 
-        FunctionsHelper.addTextWatcher(e1);
-        FunctionsHelper.addTextWatcher(e2);
+        e1.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+        e2.setFilters(new InputFilter[]{FunctionsHelper.getLettersInputFilter(),new InputFilter.LengthFilter(15)});
+        e3.setFilters(new InputFilter[]{new InputFilter.LengthFilter(10)});
 
         TextView add_button = v.findViewById(R.id.enrollment_admin_add_button);
 

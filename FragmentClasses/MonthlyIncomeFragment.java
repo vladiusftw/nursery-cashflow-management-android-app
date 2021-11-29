@@ -57,6 +57,8 @@ public class MonthlyIncomeFragment extends Fragment {
         // gets the given ID and given month and year
         // then gets all expenses (income) done by this specific kid with the specified date
         monthly_generate_button.setOnClickListener(e->{
+            generate_layout.setVisibility(View.INVISIBLE);
+            generate_all_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             String input_text = input_id.getText()+"";
             if(input_text.length() != 0){
@@ -66,7 +68,6 @@ public class MonthlyIncomeFragment extends Fragment {
                 if(expenses.size() != 0){
                     listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
                     generate_layout.setVisibility(View.VISIBLE);
-                    generate_all_layout.setVisibility(View.INVISIBLE);
                 }else{
                     FunctionsHelper.showToast(getActivity(),"No Income Generated From ID "
                             + input_text + " From Given Date");
@@ -80,6 +81,8 @@ public class MonthlyIncomeFragment extends Fragment {
         // gets the given month and year
         // then gets all expenses (income) done by all kids with the specified date
         monthly_generate_all_button.setOnClickListener(e->{
+            generate_layout.setVisibility(View.INVISIBLE);
+            generate_all_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             ArrayList<Expense> expenses = databaseHelper.getStatementsByMonth(
                     Integer.parseInt(monthly_spinner.getSelectedItem().toString()),
@@ -88,7 +91,6 @@ public class MonthlyIncomeFragment extends Fragment {
             if(expenses.size() != 0){
                 listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
                 generate_all_layout.setVisibility(View.VISIBLE);
-                generate_layout.setVisibility(View.INVISIBLE);
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Income Generated From Given Date");

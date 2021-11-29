@@ -6,11 +6,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.csit242_project.Adapters.ExpensesListAdapter;
+import com.example.csit242_project.Adapters.ExpensesNoIDListAdapter;
 import com.example.csit242_project.Classes.DatabaseHelper;
 import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
@@ -25,6 +27,8 @@ public class MonthlyExpenseFragment extends Fragment {
 
         ListView listView = v.findViewById(R.id.monthly_list);
 
+        LinearLayout generate_all_linear_layout = v.findViewById(R.id.generate_all_linear_layout);
+
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
 
         Spinner monthly_spinner = v.findViewById(R.id.month_dropdown);
@@ -38,13 +42,15 @@ public class MonthlyExpenseFragment extends Fragment {
         // gets the given month and year
         // then gets all expenses (income) done by all kids with the specified date
         monthly_generate_all_button.setOnClickListener(e->{
+            generate_all_linear_layout.setVisibility(View.INVISIBLE);
             listView.setAdapter(null);
             ArrayList<Expense> expenses = databaseHelper.getNurseryExpensesByMonth(
                     Integer.parseInt(monthly_spinner.getSelectedItem().toString()),
                     Integer.parseInt(yearly_spinner.getSelectedItem().toString())
             );
             if(expenses.size() != 0){
-                listView.setAdapter(new ExpensesListAdapter(getActivity(),expenses));
+                listView.setAdapter(new ExpensesNoIDListAdapter(getActivity(),expenses));
+                generate_all_linear_layout.setVisibility(View.VISIBLE);
             }
             else{
                 FunctionsHelper.showToast(getActivity(),"No Expenses Generated From Given Date");
