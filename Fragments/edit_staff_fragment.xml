@@ -232,8 +232,7 @@
                 android:hint="Name"
                 android:autoSizeTextType="uniform"
                 tools:ignore="UnusedAttribute"
-                android:gravity="center"
-                android:maxLength="15"/>
+                android:gravity="center"/>
 
 
         </LinearLayout>
@@ -266,8 +265,7 @@
                 android:hint="Parent Name"
                 android:autoSizeTextType="uniform"
                 tools:ignore="UnusedAttribute"
-                android:gravity="center"
-                android:maxLength="15"/>
+                android:gravity="center"/>
 
 
         </LinearLayout>
@@ -301,8 +299,7 @@
                 android:gravity="center"
                 android:inputType="number"
                 android:autoSizeTextType="uniform"
-                tools:ignore="UnusedAttribute"
-                android:maxLength="10"/>
+                tools:ignore="UnusedAttribute"/>
 
         </LinearLayout>
     </LinearLayout>
