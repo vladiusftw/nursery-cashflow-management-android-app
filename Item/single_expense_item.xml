@@ -5,7 +5,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:weightSum="3"
-    android:background="@drawable/round_corner">
+    android:background="@drawable/round_corner"
+    android:divider="@drawable/grey_divider"
+    android:showDividers="middle">
 
     <HorizontalScrollView
         android:layout_width="match_parent"
