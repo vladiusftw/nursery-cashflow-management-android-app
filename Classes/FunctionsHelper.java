@@ -3,6 +3,8 @@ package com.example.csit242_project.Classes;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.text.Editable;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.text.TextWatcher;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -144,44 +146,50 @@ public class FunctionsHelper {
         Toast.makeText(c,text,Toast.LENGTH_SHORT).show();
     }
 
-    public static boolean hasLettersOnly(String text){
-        return Pattern.compile("[a-z]+|[A-Z]+").matcher(text).matches();
+    public static boolean isLetter(String text){
+        return Pattern.compile("[a-z]|[A-Z]").matcher(text).matches();
     }
 
-    public static String removeOtherThanLetters(String text){
-        String temp = "";
-        for(int i = 0; i < text.length();i++){
-            if(hasLettersOnly(text.charAt(i)+"")) temp += text.charAt(i);
-        }
-        return temp;
-    }
-
-    public static void addTextWatcher(EditText editText){
-        editText.addTextChangedListener(new TextWatcher() {
-            boolean wasEdited = false;
+    public static InputFilter getLettersInputFilter(){
+        return new InputFilter() {
             @Override
-            public void beforeTextChanged(CharSequence charSequence, int start, int before, int count) {
-
-            }
-
-            @Override
-            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-
-            }
-
-            @Override
-            public void afterTextChanged(Editable editable) {
-                if(wasEdited){
-                    wasEdited = false;
-                    return;
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                String temp = "";
+                for(int i = start; i < end;i++){
+                    char c = source.charAt(i);
+                    if(isLetter(c+"")) temp += c;
                 }
-
-                String curr = editable.toString();
-                String newVal = FunctionsHelper.removeOtherThanLetters(curr);
-                wasEdited = true;
-                editable.replace(0,curr.length(),newVal);
+                return temp;
             }
-        });
+        };
+    }
+
+    public static InputFilter getNoSpaceInputFilter(){
+        return new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                String temp = "";
+                for(int i = start; i < end;i++){
+                    char c = source.charAt(i);
+                    if(c != ' ') temp += c;
+                }
+                return temp;
+            }
+        };
+    }
+
+    public static InputFilter getStaffInputFilter(){
+        return new InputFilter() {
+            @Override
+            public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+                String temp = "";
+                for(int i = start; i < end;i++){
+                    char c = source.charAt(i);
+                    if(c == '0' || c == '1') temp += c;
+                }
+                return temp;
+            }
+        };
     }
 
     public static double getTotalAmount(ArrayList<Expense> expenses){
