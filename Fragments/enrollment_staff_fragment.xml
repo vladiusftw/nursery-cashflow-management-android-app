@@ -10,26 +10,41 @@
     <TextView
         android:id="@+id/kids_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="Kids"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
         android:textColor="#6b6b6b"
         android:textSize="32sp"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/kids_bottom"/>
 
     <TextView
         android:id="@+id/details_text"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:gravity="center"
         android:text="Details"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
         android:textColor="#6b6b6b"
-        app:layout_constraintTop_toBottomOf="@+id/kids_text"
-        android:textSize="32sp"/>
+        app:layout_constraintTop_toBottomOf="@+id/kids_bottom"
+        app:layout_constraintBottom_toTopOf="@id/details_bottom"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/details_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.11"
+        android:orientation="horizontal"/>
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/kids_bottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintGuide_percent="0.05"
+        android:orientation="horizontal"/>
 
 
     <View
