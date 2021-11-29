@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.csit242_project.Classes.DatabaseHelper;
 import com.example.csit242_project.Classes.FunctionsHelper;
-import com.example.csit242_project.Classes.Kid;
+import com.example.csit242_project.Classes.Staff;
 import com.example.csit242_project.R;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,7 +25,6 @@ public class LoginActivity extends AppCompatActivity {
         TextView login_button = findViewById(R.id.login_button);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        databaseHelper.insertKid(new Kid("suraya","aya","1234567890"));
 
         // checks if the given username and password exists in the database if not then
         // a popup will tell the user that no such user exists
@@ -41,7 +40,9 @@ public class LoginActivity extends AppCompatActivity {
                 t.show();
             }
             else {
-                Intent i = new Intent(this,MainActivity.class);
+                Intent i;
+                if(databaseHelper.getStaffById(staffId).isAdmin() == 1) i = new Intent(this,MainAdminActivity.class);
+                else i = new Intent(this,MainStaffActivity.class);
                 i.putExtra("staffId",staffId);
                 startActivity(i);
             }
