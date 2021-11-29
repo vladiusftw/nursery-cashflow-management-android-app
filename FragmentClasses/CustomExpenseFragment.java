@@ -159,9 +159,6 @@ public class CustomExpenseFragment extends Fragment {
                 }
         });
 
-
-
-
         return v;
     }
 }
