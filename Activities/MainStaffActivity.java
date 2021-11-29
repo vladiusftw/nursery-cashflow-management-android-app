@@ -19,7 +19,7 @@ public class MainStaffActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.main_staff_activity);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
@@ -28,8 +28,7 @@ public class MainStaffActivity extends AppCompatActivity {
         Staff staff = databaseHelper.getStaffById(id);
 
         ImageView kids_button = findViewById(R.id.kids_button);
-        ImageView file_button = findViewById(R.id.file_button);
-        ImageView money_button = findViewById(R.id.money_button);
+
         ImageView user_button = findViewById(R.id.user_button);
 
         putFragment("enroll_fragment", new EnrollFragment(false));
@@ -37,32 +36,19 @@ public class MainStaffActivity extends AppCompatActivity {
 
         kids_button.setOnClickListener(e->{
             putFragment("enroll_fragment", new EnrollFragment(false));
-            clearColor(kids_button,file_button,money_button,user_button);
+            clearColor(kids_button,user_button);
             kids_button.setColorFilter(getResources().getColor(R.color.white));
         });
 
-        file_button.setOnClickListener(e->{
-            putFragment("statement_fragment", new StatementFragment());
-            clearColor(kids_button,file_button,money_button,user_button);
-            file_button.setColorFilter(getResources().getColor(R.color.white));
-        });
-
-        money_button.setOnClickListener(e->{
-            putFragment("expense_fragment", new ExpenseFragment());
-            clearColor(kids_button,file_button,money_button,user_button);
-            money_button.setColorFilter(getResources().getColor(R.color.white));
-        });
 
         user_button.setOnClickListener(e->{
 
         });
     }
 
-    private void clearColor(ImageView img1, ImageView img2, ImageView img3, ImageView img4){
+    private void clearColor(ImageView img1, ImageView img2){
         img1.setColorFilter(null);
         img2.setColorFilter(null);
-        img3.setColorFilter(null);
-        img4.setColorFilter(null);
     }
 
     private void putFragment(String tag, Fragment f){

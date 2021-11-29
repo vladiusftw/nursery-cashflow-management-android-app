@@ -8,9 +8,6 @@ import android.os.Bundle;
 import android.widget.ImageView;
 
 import com.example.csit242_project.Classes.DatabaseHelper;
-import com.example.csit242_project.Classes.Expense;
-import com.example.csit242_project.Classes.FunctionsHelper;
-import com.example.csit242_project.Classes.Kid;
 import com.example.csit242_project.Classes.Staff;
 import com.example.csit242_project.FragmentClasses.EnrollFragment;
 import com.example.csit242_project.FragmentClasses.ExpenseFragment;
@@ -22,7 +19,7 @@ public class MainAdminActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.main_activity);
+        setContentView(R.layout.main_admin_activity);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
 
