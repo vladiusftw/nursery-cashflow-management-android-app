@@ -12,6 +12,7 @@ import com.example.csit242_project.Classes.Staff;
 import com.example.csit242_project.FragmentClasses.EnrollFragment;
 import com.example.csit242_project.FragmentClasses.ExpenseFragment;
 import com.example.csit242_project.FragmentClasses.StatementFragment;
+import com.example.csit242_project.FragmentClasses.UserProfileFragment;
 import com.example.csit242_project.R;
 
 public class MainAdminActivity extends AppCompatActivity {
@@ -25,7 +26,6 @@ public class MainAdminActivity extends AppCompatActivity {
 
         Intent i = getIntent();
         int id = i.getIntExtra("staffId",0);
-        Staff staff = databaseHelper.getStaffById(id);
 
         ImageView kids_button = findViewById(R.id.kids_button);
         ImageView file_button = findViewById(R.id.file_button);
@@ -54,7 +54,9 @@ public class MainAdminActivity extends AppCompatActivity {
         });
 
         user_button.setOnClickListener(e->{
-
+            putFragment("user_profile_fragment",new UserProfileFragment(id));
+            clearColor(kids_button,file_button,money_button,user_button);
+            user_button.setColorFilter(getResources().getColor(R.color.white));
         });
     }
 
