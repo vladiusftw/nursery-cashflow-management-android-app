@@ -20,6 +20,7 @@ import com.example.csit242_project.Classes.Expense;
 import com.example.csit242_project.Classes.FunctionsHelper;
 import com.example.csit242_project.R;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class YearlyProfitFragment extends Fragment {
@@ -76,9 +77,10 @@ public class YearlyProfitFragment extends Fragment {
                 double total_expense = FunctionsHelper.getTotalAmount(expenses);
                 double total_profit = total_income - total_expense;
 
-                income_text.setText(total_income+"");
-                expense_text.setText(total_expense+"");
-                total_text.setText(total_profit+"");
+                DecimalFormat df = new DecimalFormat("#.##");
+                income_text.setText(df.format(total_income));
+                expense_text.setText(df.format(total_expense));
+                total_text.setText(df.format(total_profit));
                 total_layout.setVisibility(View.VISIBLE);
             }
         });
