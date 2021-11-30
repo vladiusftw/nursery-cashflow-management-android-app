@@ -113,7 +113,7 @@
             android:background="@drawable/total_background"
             android:divider="@drawable/grey_divider"
             android:showDividers="beginning|middle|end"
-            android:visibility="visible">
+            android:visibility="invisible">
 
             <LinearLayout
                 android:layout_width="match_parent"
