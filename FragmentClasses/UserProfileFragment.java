@@ -29,7 +29,7 @@ public class UserProfileFragment extends Fragment {
 
     @SuppressLint("SetTextI18n")
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
-        View v = inflater.inflate(R.layout.user_profile,container,false);
+        View v = inflater.inflate(R.layout.user_profile_fragment,container,false);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(getActivity());
         Staff staff = databaseHelper.getStaffById(id);
