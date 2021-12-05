@@ -10,7 +10,7 @@
         android:id="@+id/user_access"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ADMIN"
+        android:text="STAFF"
         android:autoSizeTextType="uniform"
         tools:ignore="UnusedAttribute"
         android:textColor="@color/white"
