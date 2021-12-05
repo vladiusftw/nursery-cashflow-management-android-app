@@ -145,7 +145,7 @@
             android:textAlignment="center"
             android:layout_weight="0.5"
             android:background="@drawable/search_bar_color"
-            android:maxLength="10"/>
+            android:maxLength="15"/>
 
     </LinearLayout>
 
