@@ -76,7 +76,9 @@ public class EditStaffFragment extends Fragment {
             if(id_text.length()==0){ // nothing entered
                 Toast.makeText(getActivity(),"No Value Entered!",Toast.LENGTH_SHORT).show();
             }else{
-
+                databaseHelper.deleteKidById(Integer.parseInt(id_text));
+                FunctionsHelper.showToast(getActivity(),"KID DELETED!");
+                clearAllFields(e1,e2,e3);
             }
         });
 
@@ -88,6 +90,12 @@ public class EditStaffFragment extends Fragment {
             e1.setText(kid.getName());
             e2.setText(kid.getPName());
             e3.setText(kid.getContact());
+    }
+
+    private void clearAllFields(EditText e1, EditText e2, EditText e3){
+        e1.setText("");
+        e2.setText("");
+        e3.setText("");
     }
 
 

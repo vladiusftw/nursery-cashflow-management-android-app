@@ -20,14 +20,16 @@ public class EnrollFragment extends Fragment {
     private TextView edit_button;
     private TextView enroll_button;
     private boolean admin;
+    private int id;
 
     public EnrollFragment(){
 
     }
 
     @SuppressLint("ValidFragment")
-    public EnrollFragment(boolean admin){
+    public EnrollFragment(boolean admin,int id){
         this.admin = admin;
+        this.id = id;
     }
 
     @SuppressLint("UseCompatLoadingForDrawables")
@@ -70,7 +72,7 @@ public class EnrollFragment extends Fragment {
         // 2- It will remove the button clicked color from all the other buttons and will apply
         // the button clicked color to the edit button
         edit_button.setOnClickListener(e->{
-            if(admin) putChildFragment("edit_admin_fragment", new EditAdminFragment());
+            if(admin) putChildFragment("edit_admin_fragment", new EditAdminFragment(id));
             else putChildFragment("edit_staff_fragment", new EditStaffFragment());
             clearButtonColors();
             setButtonColor(edit_button);
