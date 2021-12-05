@@ -24,6 +24,8 @@ public class Staff {
     public String getPassword(){return password;}
     public int isAdmin(){return isAdmin;}
 
+    public void setPassword(String password){this.password = password;}
+
     public String toString(){
         return "ID: " + id + "\tUsername: " + username + "\tPassword: "
                 + password + "\tIsAdmin: " + (isAdmin == 1);
