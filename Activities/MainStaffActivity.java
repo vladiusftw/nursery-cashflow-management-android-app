@@ -31,11 +31,11 @@ public class MainStaffActivity extends AppCompatActivity {
 
         ImageView user_button = findViewById(R.id.user_button);
 
-        putFragment("enroll_fragment", new EnrollFragment(false));
+        putFragment("enroll_fragment", new EnrollFragment(false,id));
         kids_button.setColorFilter(getResources().getColor(R.color.white));
 
         kids_button.setOnClickListener(e->{
-            putFragment("enroll_fragment", new EnrollFragment(false));
+            putFragment("enroll_fragment", new EnrollFragment(false,id));
             clearColor(kids_button,user_button);
             kids_button.setColorFilter(getResources().getColor(R.color.white));
         });

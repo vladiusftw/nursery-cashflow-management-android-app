@@ -22,8 +22,6 @@ public class MainAdminActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main_admin_activity);
 
-        DatabaseHelper databaseHelper = new DatabaseHelper(this);
-
         Intent i = getIntent();
         int id = i.getIntExtra("staffId",0);
 
@@ -32,11 +30,11 @@ public class MainAdminActivity extends AppCompatActivity {
         ImageView money_button = findViewById(R.id.money_button);
         ImageView user_button = findViewById(R.id.user_button);
 
-        putFragment("enroll_fragment", new EnrollFragment(true));
+        putFragment("enroll_fragment", new EnrollFragment(true,id));
         kids_button.setColorFilter(getResources().getColor(R.color.white));
 
         kids_button.setOnClickListener(e->{
-            putFragment("enroll_fragment", new EnrollFragment(true));
+            putFragment("enroll_fragment", new EnrollFragment(true,id));
             clearColor(kids_button,file_button,money_button,user_button);
             kids_button.setColorFilter(getResources().getColor(R.color.white));
         });

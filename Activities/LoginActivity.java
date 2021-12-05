@@ -32,7 +32,6 @@ public class LoginActivity extends AppCompatActivity {
         TextView login_button = findViewById(R.id.login_button);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
-        databaseHelper.insertStaff(new Staff("aboud124","Aboud124",1));
 
         // checks if the given username and password exists in the database if not then
         // a popup will tell the user that no such user exists
