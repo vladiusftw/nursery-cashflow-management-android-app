@@ -1,3 +1,4 @@
 <color name="grey">#E3E3E3</color>
-<color name="underline">#FF0000</color>
-<color name="button_color">#87E0F6</color>
+    <color name="underline">#FF0000</color>
+    <color name="button_color">#87E0F6</color>
+    <color name="text">#707070</color>
