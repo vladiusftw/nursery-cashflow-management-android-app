@@ -2,6 +2,8 @@ package com.example.csit242_project.Activities;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.InputType;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -22,9 +24,15 @@ public class LoginActivity extends AppCompatActivity {
         EditText user = findViewById(R.id.login_user);
         EditText pass = findViewById(R.id.login_pass);
 
+        user.setFilters(new InputFilter[]{FunctionsHelper.getNoSpaceInputFilter()});
+        pass.setFilters(new InputFilter[]{FunctionsHelper.getNoSpaceInputFilter()});
+        pass.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_VARIATION_PASSWORD);
+        pass.setSelection(pass.getText().length());
+
         TextView login_button = findViewById(R.id.login_button);
 
         DatabaseHelper databaseHelper = new DatabaseHelper(this);
+        databaseHelper.insertStaff(new Staff("aboud124","Aboud124",1));
 
         // checks if the given username and password exists in the database if not then
         // a popup will tell the user that no such user exists
